@@ -64,20 +64,12 @@ html {
 body {
 	font-family: "light";
 	background-color: var(--bgc);
-	background: var(--bgc) url(../assets/images/background.png);
+	background-image: url(../assets/images/background.png);
 	color: var(--textc);
-	/* for firefox */
 	scrollbar-width: thin;
 	scrollbar-color: var(--empc) black;
 	background-size: 248px;
 	background-attachment: fixed;
-	/* overflow: hidden; */
-
-	padding: 50px 150px;
-	/* display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center; */
 	font-size: 24px;
 }
 
@@ -87,22 +79,7 @@ a {
 	color: var(--textc);
 }
 
-header, main, ul li p {
-	transition: opacity 1s, height 2s ease-in-out;
-}
 
-.fade-out {
-    opacity: 0 !important;
-    height: 0 !important;
-	overflow: hidden;
-}
-
-header {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: calc(100vh - 100px);
-}
 
 .close-header {
     font-size: 24px;
@@ -129,10 +106,27 @@ header {
 	animation: caret 1s steps(1, end) infinite;
 }
 
+.fade-out {
+    opacity: 0 !important;
+    max-height: 0 !important;
+	overflow: hidden;
+}
+header, main, ul li p {
+	transition: opacity 1s ease-in, height 2s ease-in-out, max-height 2s ease-in-out;
+}
+
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	max-height: 100vh;
+}
+
 main {
-	/* padding: 25px; */
 	text-align: center;
-	height: calc(100vh - 100px);
+	padding: 25px;
+	max-height: 15000px;
 	opacity: 1;
 }
 
@@ -159,7 +153,7 @@ hr {
 .content {
 	column-gap: 50px;
 	max-width: 960px;
-	margin: 0 auto 50px auto;
+	margin: 0 auto;
     display: grid;
     grid-template-areas: "A A" "B C" "D D";
     grid-template-columns: 1fr 1fr;
