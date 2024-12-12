@@ -159,7 +159,7 @@ hr {
 .content {
 	column-gap: 50px;
 	max-width: 960px;
-	margin: auto;
+	margin: 0 auto 50px auto;
     display: grid;
     grid-template-areas: "A A" "B C" "D D";
     grid-template-columns: 1fr 1fr;
