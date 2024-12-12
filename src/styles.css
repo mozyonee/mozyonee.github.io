@@ -165,11 +165,6 @@ hr {
 .content div:nth-child(3) { grid-area: C; }
 .content div:nth-child(4) { grid-area: D; }
 
-.row:last-child h3 {
-	margin-top: 50px !important;
-	margin-bottom: 25px !important;
-}
-
 .experience h3, .experience li, .education h3, .education li {
 	position: relative;
 	text-align: left;
@@ -275,9 +270,9 @@ h4 img:hover {
 }
 
 @media screen and (max-width: 800px) {
-	body {
+	/* body {
 		padding: 25px;
-	}
+	} */
 	.point ul {
 		gap: 15px;
 		font-size: 24px;
