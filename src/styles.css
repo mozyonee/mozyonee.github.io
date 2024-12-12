@@ -64,7 +64,7 @@ html {
 body {
 	font-family: "light";
 	background-color: var(--bgc);
-	background: url(../assets/images/background.png);
+	background: var(--bgc) url(../assets/images/background.png);
 	color: var(--textc);
 	/* for firefox */
 	scrollbar-width: thin;
