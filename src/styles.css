@@ -165,6 +165,10 @@ hr {
 .content div:nth-child(3) { grid-area: C; }
 .content div:nth-child(4) { grid-area: D; }
 
+.stack li:hover {
+	text-decoration: underline;
+}
+
 .experience h3, .experience li, .education h3, .education li {
 	position: relative;
 	text-align: left;
