@@ -165,7 +165,7 @@ hr {
 .content div:nth-child(3) { grid-area: C; }
 .content div:nth-child(4) { grid-area: D; }
 
-.stack li:hover {
+.stack li span:hover {
 	text-decoration: underline;
 }
 
