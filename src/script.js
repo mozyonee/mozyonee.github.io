@@ -6,7 +6,7 @@ const mainClose = document.getElementById("close-main");
 const baseTypeSpeed = 300;
 const baseDeleteSpeed = 200;
 const deleteDelay = 2000;
-const text = "macr0n";
+const text = "mozyonee";
 let typing = true;
 let index = 0;
 
@@ -22,7 +22,7 @@ const getRandomSpeed = (baseSpeed) => {
 	const radius = baseSpeed;
 	const randomSpeed = Math.floor(baseSpeed - radius + Math.random() * (2 * radius));
 	return randomSpeed;
-}
+};
 
 const typeText = () => {
 	if (typing) {
@@ -44,7 +44,7 @@ const typeText = () => {
 			setTimeout(typeText, getRandomSpeed(baseTypeSpeed));
 		}
 	}
-}
+};
 typeText();
 
 const handleMediaChange = (event) => {
@@ -55,7 +55,7 @@ const handleMediaChange = (event) => {
 		columns[1].insertBefore(projects, columns[1].firstChild);
 		columns[0].appendChild(education);
 	}
-}
+};
 handleMediaChange(mediaQuery);
 
 mediaQuery.addEventListener('change', handleMediaChange);
@@ -71,7 +71,7 @@ mainClose.addEventListener('click', () => {
 	mainBlock.classList.add('fade-out');
 	audioMusic.loop = true;
 	audioMusic.play();
-})
+});
 
 headings.forEach(heading => {
 	heading.addEventListener('click', () => {
