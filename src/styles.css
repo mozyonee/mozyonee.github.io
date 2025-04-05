@@ -79,8 +79,6 @@ a {
 	color: var(--textc);
 }
 
-
-
 .close-header {
     font-size: 24px;
     text-decoration: none;
@@ -112,6 +110,7 @@ a {
     max-height: 0 !important;
 	overflow: hidden;
 }
+
 header, main, ul li p {
 	transition: opacity 1s ease-in, height 2s ease-in-out, max-height 2s ease-in-out;
 }
@@ -131,14 +130,18 @@ main {
 	opacity: 1;
 }
 
-#close-main {
+.close-main {
 	cursor: url(../assets/images/cursor/hover.png) 0 0, auto;
 	filter: brightness(1);
-	transition: filter 1s ease-in;
+	transition: filter 0.25s ease-in;
 }
 
-#close-main:hover {
-	filter: brightness(0.8);
+img.close-main:hover {
+	filter: brightness(0.25);
+}
+
+h2.close-main:hover {
+	text-decoration: underline;
 }
 
 h2 {

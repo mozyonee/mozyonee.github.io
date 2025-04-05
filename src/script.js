@@ -2,7 +2,7 @@ const audioMusic = new Audio('./assets/audio/music/prototypek.mp3');
 const headerBlock = document.getElementById("block-header");
 const headerClose = document.getElementById("close-header");
 const mainBlock = document.getElementById("block-main");
-const mainClose = document.getElementById("close-main");
+const closeMainElements = document.querySelectorAll(".close-main");
 const baseTypeSpeed = 300;
 const baseDeleteSpeed = 200;
 const deleteDelay = 2000;
@@ -66,11 +66,13 @@ headerClose.addEventListener('click', () => {
 	audioMusic.pause();
 });
 
-mainClose.addEventListener('click', () => {
-	headerBlock.classList.remove('fade-out');
-	mainBlock.classList.add('fade-out');
-	audioMusic.loop = true;
-	audioMusic.play();
+closeMainElements.forEach(element => {
+	element.addEventListener('click', () => {
+		headerBlock.classList.remove('fade-out');
+		mainBlock.classList.add('fade-out');
+		audioMusic.loop = true;
+		audioMusic.play();
+	});
 });
 
 headings.forEach(heading => {
