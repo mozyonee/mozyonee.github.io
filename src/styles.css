@@ -12,6 +12,15 @@
 	src: url(../assets/fonts/Code-39-Logitogo.ttf)
 }
 
+@-webkit-keyframes caret {
+	0%, 49.99% {
+	  opacity: 0; /* Fully transparent */
+	}
+	50%, 100% {
+	  opacity: 1; /* Fully opaque */
+	}
+}
+
 @keyframes caret {
 	0%, 49.99% {
 	  opacity: 0; /* Fully transparent */
@@ -46,6 +55,10 @@
 	background-color: var(--empc);
 }
 
+::-moz-selection {
+	background: var(--hic);
+}
+
 ::selection {
 	background: var(--hic);
 }
@@ -57,7 +70,8 @@
 
 html {
 	scroll-behavior: smooth;
-	scroll-snap-type: y proximity;
+	-ms-scroll-snap-type: y proximity;
+	    scroll-snap-type: y proximity;
 	cursor: url(../assets/images/cursor/static.png) 0 0, auto;
 }
 
@@ -101,7 +115,8 @@ a {
 	height: 26px;
 	width: 4px;
 	background-color: var(--textc);
-	animation: caret 1s steps(1, end) infinite;
+	-webkit-animation: caret 1s steps(1, end) infinite;
+	        animation: caret 1s steps(1, end) infinite;
 }
 
 .fade-out {
@@ -132,12 +147,16 @@ main {
 
 .close-main {
 	cursor: url(../assets/images/cursor/hover.png) 0 0, auto;
-	filter: brightness(1);
+	-webkit-filter: brightness(1);
+	        filter: brightness(1);
+	transition: -webkit-filter 0.25s ease-in;
 	transition: filter 0.25s ease-in;
+	transition: filter 0.25s ease-in, -webkit-filter 0.25s ease-in;
 }
 
 img.close-main:hover {
-	filter: brightness(0.25);
+	-webkit-filter: brightness(0.25);
+	        filter: brightness(0.25);
 }
 
 h2.close-main:hover {
@@ -155,7 +174,8 @@ hr {
 }
 
 .content {
-	column-gap: 50px;
+	-moz-column-gap: 50px;
+	     column-gap: 50px;
 	max-width: 960px;
 	margin: 0 auto;
     display: grid;
@@ -167,6 +187,11 @@ hr {
 .content div:nth-child(2) { grid-area: B; }
 .content div:nth-child(3) { grid-area: C; }
 .content div:nth-child(4) { grid-area: D; }
+
+.stack ul {
+	display: flex;
+	flex-direction: column !important;
+}
 
 .stack li span:hover {
 	text-decoration: underline;
@@ -212,6 +237,7 @@ hr {
 	display: grid;
 	grid-template-rows: 0fr 0fr;
     transition: grid-template-rows 0.5s ease-in-out;
+    transition: grid-template-rows 0.5s ease-in-out, -ms-grid-rows 0.5s ease-in-out;
 }
 
 .point.active {
@@ -240,6 +266,8 @@ hr {
 }
 
 .row ul, .row li {
+	max-height: -webkit-min-content;
+	max-height: -moz-min-content;
 	max-height: min-content;
 }
 
@@ -263,7 +291,8 @@ h4 span {
 }
 
 h4 img:hover {
-	filter: brightness(0.8);
+	-webkit-filter: brightness(0.8);
+	        filter: brightness(0.8);
 }
  
 .point.active h3::before, .point:hover h3::before {

@@ -47,6 +47,7 @@ const typeText = () => {
 };
 typeText();
 
+
 const handleMediaChange = (event) => {
 	if (event.matches) {
 		columns[0].appendChild(projects);
