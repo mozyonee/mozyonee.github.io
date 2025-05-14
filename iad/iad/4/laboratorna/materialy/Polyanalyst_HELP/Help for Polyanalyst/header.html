@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+	<META NAME="Author" CONTENT="Josh Froelich">
+	<LINK REL="stylesheet" HREF="tutorials.css" TYPE="text/css">
+	<SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript" SRC="js/preload.js"></SCRIPT>
+	<SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript" SRC="js/linkFrames.js"></SCRIPT>
+</HEAD>
+
+<BODY BGCOLOR="#0660A2" BOTTOMMARGIN="0" TOPMARGIN="8" ONLOAD="preload();reloadHeader();">
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" ALIGN="center" WIDTH="98%">
+
+	<TR>
+		<TD WIDTH="140" VALIGN="middle" ROWSPAN="2">
+			<A HREF="http://www.megaputer.com" TARGET="_parent">
+				<IMG SRC="img/mp_logo.jpg" ALT="Click here to go the the Megaputer Website." BORDER="0">
+			</A>
+		</TD>
+		<TD VALIGN="top" WIDTH="300">
+			<P CLASS="htitle">PolyAnalyst
+		</TD>
+		<TD VALIGN="middle" ROWSPAN="2">
+			<FORM NAME="tutorial">
+				<SELECT NAME="links" ONCHANGE="switchFrames(document.tutorial.links.options[document.tutorial.links.selectedIndex].value);">
+					<OPTION VALUE="nothing">---Select a Tutorial-----
+					<OPTION VALUE="t1">1. &nbsp;&nbsp;&nbsp;&nbsp;Simple Dependence
+					<OPTION VALUE="t2">2. &nbsp;&nbsp;&nbsp;&nbsp;Medical Study
+					<OPTION VALUE="t31">3a.&nbsp; MPG Analysis
+					<OPTION VALUE="t32">3b.&nbsp; MPG Forecasting
+					<OPTION VALUE="t4">4. &nbsp;&nbsp;&nbsp;&nbsp;Gold Price Change
+					<OPTION VALUE="t5">5. &nbsp;&nbsp;&nbsp;&nbsp;Applied Marketing
+					<OPTION VALUE="t6">6. &nbsp;&nbsp;&nbsp;&nbsp;Direct Marketing
+					<OPTION VALUE="t7"> 7. &nbsp;&nbsp;&nbsp;&nbsp;Market Basket
+					<OPTION VALUE="t8"> 8. &nbsp;&nbsp;&nbsp;&nbsp;PolyAnalyst Scheduler
+				</SELECT>&nbsp;&nbsp;
+				<INPUT TYPE="Button" NAME="bOverview" ONCLICK="switchFrames('overview');" VALUE="Overview" HSPACE="0" VSPACE="0"></FORM>
+		</TD>
+	</TR>
+	<TR>
+		<TD VALIGN="top" WIDTH="300">
+			<P CLASS="htitle">Tutorials
+		</TD>
+	</TR>
+</TABLE>
+</BODY>
+</HTML>

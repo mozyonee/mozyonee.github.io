@@ -1,0 +1,795 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./t4_files/filelist.xml">
+<link rel=Edit-Time-Data href="./t4_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>PolyAnalyst Tutorial Four -- Gold Direction Prediction</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Subject>Predicting the Direction of the Gold Price Change</o:Subject>
+  <o:Author>Joshua Froelich</o:Author>
+  <o:Keywords>tutorial, gold,polyanalyst, prediction</o:Keywords>
+  <o:Description>Created: 5-24-2000</o:Description>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>Sergei Ananyan</o:LastAuthor>
+  <o:Revision>50</o:Revision>
+  <o:TotalTime>174</o:TotalTime>
+  <o:Created>2000-05-24T19:44:00Z</o:Created>
+  <o:LastSaved>2000-06-20T14:08:00Z</o:LastSaved>
+  <o:Pages>3</o:Pages>
+  <o:Words>2028</o:Words>
+  <o:Characters>11562</o:Characters>
+  <o:Category>Tutorial</o:Category>
+  <o:Manager>Sergei Ananyan</o:Manager>
+  <o:Company>Megaputer Intelligence</o:Company>
+  <o:Lines>96</o:Lines>
+  <o:Paragraphs>23</o:Paragraphs>
+  <o:CharactersWithSpaces>14198</o:CharactersWithSpaces>
+  <o:Version>9.2720</o:Version>
+ </o:DocumentProperties>
+ <o:CustomDocumentProperties>
+  <o:Checked_x0020_by dt:dt="string">Sergei Ananyan</o:Checked_x0020_by>
+  <o:Date_x0020_completed dt:dt="string">5-24-2000</o:Date_x0020_completed>
+  <o:Typist dt:dt="string">Joshua Froelich</o:Typist>
+ </o:CustomDocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:PixelsPerInch>120</o:PixelsPerInch>
+  <o:TargetScreenSize>1152x882</o:TargetScreenSize>
+ </o:OfficeDocumentSettings>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>107</w:Zoom>
+  <w:Compatibility>
+   <w:UseFELayout/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<link rel=Stylesheet type="text/css" media=all href=myword.css>
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Helvetica;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Batang;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-alt:"Arial Unicode MS";
+	mso-font-charset:129;
+	mso-generic-font-family:auto;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:1 151388160 16 0 524288 0;}
+@font-face
+	{font-family:"\@Batang";
+	mso-font-charset:129;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-1342176593 1775729915 48 0 524447 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{margin-right:0in;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.mtitle, li.mtitle, div.mtitle
+	{mso-style-name:mtitle;
+	margin-right:0in;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	text-indent:20.95pt;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	font-family:Helvetica;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:#400B46;}
+p.Attribute, li.Attribute, div.Attribute
+	{mso-style-name:Attribute;
+	mso-style-parent:"";
+	mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.ButtonText, li.ButtonText, div.ButtonText
+	{mso-style-name:ButtonText;
+	mso-style-parent:"";
+	mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.Description, li.Description, div.Description
+	{mso-style-name:Description;
+	mso-style-parent:"";
+	mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.FileLocation, li.FileLocation, div.FileLocation
+	{mso-style-name:FileLocation;
+	mso-style-parent:"";
+	mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.FileName, li.FileName, div.FileName
+	{mso-style-name:FileName;
+	mso-style-parent:"";
+	mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.MenuSelection, li.MenuSelection, div.MenuSelection
+	{mso-style-name:MenuSelection;
+	mso-style-parent:"";
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	mso-list:l0 level1 lfo2;
+	tab-stops:list .25in;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.PageTitle, li.PageTitle, div.PageTitle
+	{mso-style-name:PageTitle;
+	mso-style-parent:"";
+	mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:13.5pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.Step, li.Step, div.Step
+	{mso-style-name:Step;
+	mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;
+	mso-bidi-font-weight:normal;
+	text-decoration:underline;
+	text-underline:single;}
+p.SubStep, li.SubStep, div.SubStep
+	{mso-style-name:SubStep;
+	mso-style-parent:"";
+	mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	text-decoration:underline;
+	text-underline:single;}
+p.WindowTitle, li.WindowTitle, div.WindowTitle
+	{mso-style-name:WindowTitle;
+	mso-style-parent:"";
+	mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:258297399;
+	mso-list-type:hybrid;
+	mso-list-template-ids:2012655368 1859160624 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l0:level1
+	{mso-level-style-link:MenuSelection;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:1044721903;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1582104292 -1159293524 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l1:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l1:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;}
+@list l1:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:1.25in;
+	mso-level-number-position:right;
+	margin-left:1.25in;
+	text-indent:-9.0pt;}
+@list l2
+	{mso-list-id:1077020142;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1502178112 376592298 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l2:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l3
+	{mso-list-id:1234580944;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-606325396 -1969330206 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l3:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l4
+	{mso-list-id:1773745093;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1716480418 -1666294846 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l4:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	mso-ansi-font-style:normal;}
+@list l5
+	{mso-list-id:1861817167;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1329113802 -2086363246 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l5:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l6
+	{mso-list-id:1978947927;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1823007440 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+<script language="JavaScript1.2"  TYPE="text/javascript" src="js/linkFrames.js">
+</script>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1030"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'
+onload="integrateF();">
+
+<div class=Section1>
+<table border=0 cellspacing=0 cellpadding=0 width="100%">
+ <tr>
+  <td nowrap bgcolor="#F4E055" height="40">
+  <p class=mtitle>Tutorial 4: Gold Price Forecasting Using Stock Analysis</p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>
+  <img src="img\top_left_curve.gif" align=top border=0>
+  </td>
+ </tr>
+</table>
+<div align=center>
+
+<table border=0 cellspacing=0 cellpadding=0 width="95%" style='width:95.0%;
+ mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr>
+  <td style='padding:0in 0in 0in 0in'>
+ 
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'><span
+  style='mso-bookmark:_Toc430600750'><span style='mso-bidi-font-size:13.5pt'><a name="_Toc430600750"></a><a name=brief><span style='mso-bookmark:_Toc430600750'><b><span
+  style='mso-bidi-font-size:13.5pt'>Brief Description: </span></b></span></a><span
+  style='mso-bookmark:_Toc430600750'><b><u><span style='mso-bidi-font-size:
+  13.5pt'><o:p></o:p></span></u></b></span>PolyAnalyst
+  can be used to aid in predicting the direction of the change of the price of
+  gold (referred to as DCPG from here on) based on analysis of stock
+  indices.<span style="mso-spacerun: yes">  </span>Predicting the DCPG is very
+  valuable in developing a profitable trading strategy.<span
+  style="mso-spacerun: yes">  </span>PolyAnalyst attempts to predict the DCPG
+  by using machine learning engines to explore and analyze data.<o:p></o:p></span></span></p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'><span
+  style='mso-bookmark:_Toc430600750'><span style='mso-bidi-font-size:13.5pt'>The
+  goal is to predict the DCPG between two sequential sessions of the COMEX
+  trading session.<span style="mso-spacerun: yes">  </span>We are more
+  interested in predicting the DCPG than actual values of change in the price
+  of gold.<span style="mso-spacerun: yes">  </span>This is because direction is
+  something we can successfully predict with a great degree of accuracy.<span
+  style="mso-spacerun: yes">  </span>The actual values of the change in the
+  price of gold are much more complicated to predict, and this type of
+  prediction is not pursued in this tutorial.</span></span><span
+  style='mso-bidi-font-size:13.5pt'><o:p></o:p></span></p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'><b><span
+  style='mso-bidi-font-size:13.5pt'>About the Data</span></b><span
+  style='mso-bidi-font-size:13.5pt'>: The data spans 1,077 trading sessions, a
+  time period of about 3 years.<span style="mso-spacerun: yes">  </span>The
+  data used for this tutorial consists of:<o:p></o:p></span></p>
+  <p style='margin-right:38.55pt;margin-left:.25in;text-indent:-.3pt;
+  mso-list:l6 level1 lfo4;tab-stops:list .5in left 611.7pt'><![if !supportLists]><span
+  style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]>Various stock market indices values, such as the
+  Standard &amp; Poor’s 500</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;text-indent:-.3pt;
+  mso-list:l6 level1 lfo4;tab-stops:list .5in left 611.7pt'><![if !supportLists]><span
+  style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]>Indices characterizing the performance of individual
+  industry groups</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'>The data
+  is stored in the file COMEXGLD.CSV.<span style="mso-spacerun: yes"> 
+  </span>Each record in the file corresponds to the values derived from one
+  COMEX trading session (day).<span style="mso-spacerun: yes">  </span>The
+  differences between today’s and yesterday’s stock market indices are listed
+  sequentially in the file.<span style="mso-spacerun: yes">  </span>The
+  attribute names are contained in the first row.<span style="mso-spacerun:
+  yes">  </span>These names are abbreviations of the indices.<span
+  style="mso-spacerun: yes">  </span>The last attribute in each record is the
+  value of the gold price change (dGC).</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'><b>The
+  Problem</b>: Given the difference in values of various stock indices from
+  yesterday and today, attempt to predict the DCPG for the next day’s trading
+  session.</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'><a
+  name=s1><b><u>Step 1: Importing the Data</u></b></a><b><u><o:p></o:p></u></b></p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'>Please
+  refer to Tutorial One for an in depth description of the import wizard in case
+  you cannot perform a step in the wizard.</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'>From the
+  toolbar, click the <img width=27 height=27 id="_x0000_i1102"
+  src="img\t4\t4.1.gif"><span style="mso-spacerun: yes"> </span>button to open
+  a new project.<span style="mso-spacerun: yes">  </span>The file in this
+  tutorial is <i>Comexgld.csv</i>. <b><span style='font-size:10.0pt;mso-bidi-font-size:
+  12.0pt'><o:p></o:p></span></b></p>
+  <p style='margin-right:38.55pt;margin-left:.25in;text-indent:-.25in;
+  mso-list:l4 level1 lfo6;tab-stops:list .25in left 611.7pt'><![if !supportLists]><span
+  style='mso-bidi-font-style:italic'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]>PolyAnalyst determines that all the fields are
+  numeric by default.<i><o:p></o:p></i></p>
+  <p style='margin-right:38.55pt;margin-left:.25in;text-indent:-.25in;
+  mso-list:l4 level1 lfo6;tab-stops:list .25in left 611.7pt'><![if !supportLists]><span
+  style='mso-bidi-font-style:italic'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]>In the Edit Project window, name the project “<i>Prediction
+  of Gold Price Change Direction”.<o:p></o:p></i></p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'>You can
+  view the data in the World data set by double clicking on the word World in
+  the Datasets section of the Workspace panel.</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'>PolyAnalyst
+  provides the ability to save projects so that users can return at later
+  points in time and continue from where they point left off. To save the
+  project, click the <img width=22 height=24 id="_x0000_i1104"
+  src="img\t4\t4.2.gif"><span style="mso-spacerun: yes"> </span>button in the
+  toolbar. (Note: Don’t overwrite Comexgld.prj – this is the finished tutorial)</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'><a
+  name=s2><b><u>Step 2: Using Rule Assistant to Manually Create a Rule</u></b></a></p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'>PolyAnalyst
+  provides the ability to create rules or modify rules found by exploration
+  engines.<span style="mso-spacerun: yes">  </span>Rules are expressions that
+  use attributes to accomplish a mathematical and or logical process. Data
+  mining still requires people to sometimes enter information to further
+  exploration and analysis by the computer.<span style="mso-spacerun: yes"> 
+  </span>PolyAnalyst makes this process of entering information as painless as
+  possible by using the Rule Assistant.<span style="mso-spacerun: yes"> 
+  </span>The Rule Assistant is an easy to use interface for creating or
+  modifying rules.<span style="mso-spacerun: yes">  </span>The Rule Assistant
+  provides buttons for common mathematical operators, and lists of attributes
+  and other functions all within reach of a mouse click.</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'>We want
+  to predict the DCPG for the next day’s trading session.<span
+  style="mso-spacerun: yes">  </span>To predict the DCPG we will first try and
+  create a model from the data contained in the imported file.<span
+  style="mso-spacerun: yes">  </span>To create the model we wish to concentrate
+  specifically on the values of the dGC attribute for each record.<span
+  style="mso-spacerun: yes">  </span>The dGC attribute is the amount of the
+  change in the price of gold.<span style="mso-spacerun: yes">  </span>We must
+  work backward by creating a model that looks at the next day’s dGC value and
+  explores how next day’s dGC is related to the attributes in today’s
+  record.<span style="mso-spacerun: yes">  </span>Once we understand that
+  model, we can then use the values of today’s attributes to predict the DCPG.</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'>PolyAnalyst
+  works with cases record by record.<span style="mso-spacerun: yes">  </span>To
+  compare next day’s dGC to today’s attributes, we must somehow move the next
+  day record up one record, so that it is in the same record as today’s other
+  attributes.<span style="mso-spacerun: yes">  </span>To move this record up,
+  we must create a new attribute that is the value of the next day’s dGC in
+  today’s record.<span style="mso-spacerun: yes">  </span>Then PolyAnalyst can explore
+  the data correctly.<span style="mso-spacerun: yes">  </span>To create this
+  next day’s dGC attribute we will create a rule. </p>
+  <p style='margin-right:38.55pt;margin-left:.25in;text-indent:-.25in;
+  mso-list:l1 level1 lfo8;tab-stops:list .25in left 611.7pt'><![if !supportLists]>1.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]>From
+  the main file menu, select <b style='mso-bidi-font-weight:normal'><span
+  style='mso-bidi-font-size:10.0pt'>Create Object</span></b> | <b
+  style='mso-bidi-font-weight:normal'><span style='mso-bidi-font-size:10.0pt'>Create
+  Rule…</span></b><span style="mso-spacerun: yes">  </span>The <i
+  style='mso-bidi-font-style:normal'><span style='mso-bidi-font-size:10.0pt'>Create
+  a new rule window </span></i>appears.<span style="mso-spacerun: yes"> 
+  </span>This window is also referred to as the Rule Assistant.</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;text-indent:-.25in;
+  mso-list:l1 level1 lfo8;tab-stops:list .25in left 611.7pt'><![if !supportLists]>2.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]>Name
+  the rule <i style='mso-bidi-font-style:normal'><span style='mso-bidi-font-size:
+  10.0pt'>TomorrowGCDir</span></i>.</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;text-indent:-.25in;
+  mso-list:l1 level1 lfo8;tab-stops:list .25in left 611.7pt'><![if !supportLists]>3.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]>NOTE:
+  The next section of creating the rule tests your ability to create a rule on
+  your own, but the answer is located just underneath the section so scroll
+  slowly!</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'>We must
+  somehow formulate the attribute next day’s gDC.<span style="mso-spacerun:
+  yes">  </span>This may also be thought of as the next records gDC.<span
+  style="mso-spacerun: yes">  </span>PolyAnalyst provides a basic expression
+  that an attribute’s next row value can be stored in the original row.<span
+  style="mso-spacerun: yes">  </span>The syntax is to add [1] after the
+  attribute, signifying to take the value of the next row attribute.<span
+  style="mso-spacerun: yes">  </span>So dGC[1] is the next row value of
+  dGC.<span style="mso-spacerun: yes">  </span>What this really means is that
+  dGC[1] is the value of the amount of the change in the price of gold for the
+  next day.</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'>We wish
+  to create a conditional statement.<span style="mso-spacerun: yes">  </span>In
+  programming languages this usually refers to an if statement.<span
+  style="mso-spacerun: yes">  </span>A conditional statements evaluates a
+  condition, and if the condition is true returns a true value, and if the
+  condition is false returns a false value, and if the condition cannot be
+  applied to something an otherwise value.<span style="mso-spacerun: yes"> 
+  </span>PolyAnalyst uses a form of the if statement to create a conditional
+  expression.<span style="mso-spacerun: yes">  </span>In PolyAnalyst you can
+  specify the true, false, or otherwise value that is returned after evaluating
+  the condition.<span style="mso-spacerun: yes">  </span>This return value is
+  the value of the TomorrowGCDir attribute for each record.</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'>The
+  condition is whether or not dGC[1] is positive or negative or zero.<span
+  style="mso-spacerun: yes">  </span>If it is positive then we know that the
+  DCPG is positive, so we return a positive value.<span style="mso-spacerun:
+  yes">  </span>If dGC[1] is negative, then we know that DCPG is negative, and
+  so we return a negative value.<span style="mso-spacerun: yes">  </span>If
+  dGC[1] is neither positive nor negative, then there was no change between two
+  records, and so we return a zero value.</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'>The
+  syntax of the functions used in PolyAnalyst may seem difficult at first but
+  many functions are quite easy.<span style="mso-spacerun: yes">  </span>For a
+  conditional if statement, the basic syntax is as follows: if(condition, value
+  if true, value if false, otherwise).<span style="mso-spacerun: yes"> 
+  </span>PolyAnalyst provides the functionality to create nested if statements
+  too.<span style="mso-spacerun: yes">  </span>In this case, testing for the
+  negative value of dGC[1] requires a nested if statement.</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;text-indent:-.25in;
+  mso-list:l1 level1 lfo8;tab-stops:list .25in left 611.7pt'><![if !supportLists]>4.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]>Try
+  and enter the following statement into rule box on your own by translating
+  this text rule into a real mathematical rule with correct syntax.<span
+  style="mso-spacerun: yes">  </span>Note that you can use the Rule Assistants
+  several GUI elements to make creating the rule very easy.</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'>If the
+  next day value if dGC is positive, then return a positive number (use
+  one).<span style="mso-spacerun: yes">  </span>Or else, if the next day value
+  of dGC is negative, return a negative number, or else return a number signifying
+  no change. </p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'>The
+  answer is shown following this picture.</p>
+  <p align=center style='margin-right:38.55pt;margin-left:.25in;text-align:
+  center;tab-stops:611.7pt'><img width=477 height=439 id="_x0000_i1106"
+  src="img\t4\t4.3.gif"></p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'>The
+  answer is:<span style="mso-spacerun: yes">    
+  </span>if(dGC[1]&gt;0,1,if(dGC[1]&lt;0,-1,0))</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'>5.<span
+  style="mso-spacerun: yes">  </span>Click <b style='mso-bidi-font-weight:normal'><span
+  style='mso-bidi-font-size:10.0pt'>OK</span></b>.<span style="mso-spacerun:
+  yes">  </span>The rule is created and its icon appears under the rule section
+  in the Workspace panel.</p>
+  <p class=Step style='margin-top:0in;margin-right:38.55pt;margin-bottom:0in;
+  margin-left:.25in;margin-bottom:.0001pt;tab-stops:611.7pt'><a name=s3>Step 3:
+  Applying the Rule to a Dataset</a></p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'>PolyAnalyst
+  provides the user with a functional interface supporting drag-and-drop
+  techniques.<span style="mso-spacerun: yes">  </span>In this tutorial,
+  applying the rule is as easy as drag-and-drop.</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;text-indent:-.25in;
+  mso-list:l1 level1 lfo8;tab-stops:list .25in left 611.7pt'><![if !supportLists]>5.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]>Right
+  click the <i style='mso-bidi-font-style:normal'><span style='mso-bidi-font-size:
+  10.0pt'>TomorrowGCDir</span></i> rule in the Workspace panel.</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;text-indent:-.25in;
+  mso-list:l1 level1 lfo8;tab-stops:list .25in left 611.7pt'><![if !supportLists]>6.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]>Select
+  <b>Apply to | Dataset World</b>.<span style="mso-spacerun: yes"> 
+  </span>PolyAnalyst applies the rule.</p>
+  <p align=center style='margin-right:38.55pt;margin-left:.25in;text-align:
+  center;tab-stops:611.7pt'><img width=133 height=107 id="_x0000_i1108"
+  src="img\t4\t4.4.gif"></p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'>If you
+  double-click on World, you’ll see that the last column in the World dataset
+  contains the values of the new attribute <i style='mso-bidi-font-style:normal'><span
+  style='mso-bidi-font-size:10.0pt'>TomorrowGCDir</span></i>. </p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'><a
+  name=s4><b><u>Step 4: Using Multiparametric Linear Regression</u></b></a><b><u><o:p></o:p></u></b></p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'>We have
+  now successfully setup an attribute in each record that can be used as the
+  target attribute in Linear Regression.<span style="mso-spacerun: yes"> 
+  </span>This will allow us to determine the influence of the other attributes
+  in each record to the TomorrowGCDir attribute, as Linear Regression in
+  PolyAnalyst explores a case record by record.</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;text-indent:-.25in;
+  mso-list:l3 level1 lfo10;tab-stops:list .25in left 611.7pt'><![if !supportLists]>1.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]>Right
+  click on the World data set. Select <b>Explore</b> | <b>Linear Regression
+  (LR)</b>.<span style="mso-spacerun: yes">  </span>The <i>Linear Regression on
+  Data set – World</i> window appears.</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;text-indent:-.25in;
+  mso-list:l3 level1 lfo10;tab-stops:list .25in left 611.7pt'><![if !supportLists]>2.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]>Name
+  the report LR_<i style='mso-bidi-font-style:normal'><span style='mso-bidi-font-size:
+  10.0pt'>TomorrowGCDir</span></i>.</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;text-indent:-.25in;
+  mso-list:l3 level1 lfo10;tab-stops:list .25in left 611.7pt'><![if !supportLists]>3.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]>We
+  are trying to predict <i style='mso-bidi-font-style:normal'><span
+  style='mso-bidi-font-size:10.0pt'>TomorrowGCDir</span></i>.<span
+  style="mso-spacerun: yes">  </span>Double click on the <i style='mso-bidi-font-style:
+  normal'><span style='mso-bidi-font-size:10.0pt'>TomorrowGCDir</span></i> attribute
+  to make it the target of the exploration (the dependant attribute). It should
+  be highlighted in red.<span style="mso-spacerun: yes">  </span>Click <b>OK</b>.<span
+  style="mso-spacerun: yes">  </span>PolyAnalyst creates the Linear Regression
+  report under the Reports section in the Workspace panel and the report is
+  opened in the Results panel.</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'><b>The
+  Linear Exploration Report:</b> This report is divided into two main
+  sections.<span style="mso-spacerun: yes">  </span>This report has been
+  discussed in earlier tutorials and should be easier to understand at this
+  point.</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'><b>The
+  Text Section</b>:<span style="mso-spacerun: yes">  </span>The important
+  information in this window is the expression modeling the dependence of the
+  attribute TomorrowGCDir on the other attributes.</p>
+  <p align=center style='margin-right:38.55pt;margin-left:.25in;text-align:
+  center;tab-stops:611.7pt'><img width=673 height=412 id="_x0000_i1110"
+  src="img\t4\t4.5.gif"></p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'>When
+  reviewing linear regression, the numbers preceding each attribute are called
+  coefficients.<span style="mso-spacerun: yes">  </span>Coefficients help
+  relate the dependant attribute to an independent attribute.<span
+  style="mso-spacerun: yes">  </span>They reveal the direction of the
+  influence.<span style="mso-spacerun: yes">  </span>For example, TomorrowGCDir
+  increases as dGSM increases, but decreases as dSPU increases.</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'><b>The <i>Terms:</i>
+  table:</b><span style="mso-spacerun: yes">  </span>The last two columns <i>F-Ratio</i>
+  and <i>part sum of squares </i>display the significance of the influence of
+  the corresponding attribute and its contribution to the explanation of the
+  variability of the predicted attribute.<span style="mso-spacerun: yes"> 
+  </span>In the present case the two most significant attributes are dCRB and
+  dGSM, due to their large F-ratios.<span style="mso-spacerun: yes"> 
+  </span>dCRB stands for the Commodities Research Bureau, and is a market index
+  calculated by the United States Consumption Investigation Bureau.<span
+  style="mso-spacerun: yes">  </span>GSM stands for Gold &amp; Silver Mining,
+  and is an index characterizing the prices for the stock of companies related
+  to gold and silver mining.<span style="mso-spacerun: yes">  </span>All the
+  attributes in the terms table can be better visualized by looking at the
+  terms graph farther down in the report.</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'><b>The
+  Terms Graph:<o:p></o:p></b></p>
+  <p align=center style='margin-right:38.55pt;margin-left:.25in;text-align:
+  center;tab-stops:611.7pt'><img width=543 height=395 id="_x0000_i1112"
+  src="img\t4\t4.6.gif"></p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'>In fact,
+  the performed analysis is not required for obtaining the prediction for the
+  gold price change direction. To have a forecast for this direction one could
+  simply apply the found rule to the data containing the information about the
+  future trading sessions. Nevertheless, the analysis of the obtained relation
+  is very useful for the understanding of the market dynamics, and can be most
+  valuable itself.</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'><a
+  name=s5><b><u>Step 5: Using the Rule Assistant</u></b></a><b><u><o:p></o:p></u></b></p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'>What
+  percentage of cases in the provided historic data provide a correct
+  prediction for the gold price change using the earlier obtained linear
+  rule?<span style="mso-spacerun: yes">  </span>The prediction is correct when
+  the corresponding values of the attributes LR_TomorrowGCDir and TomorrowGCDir
+  are either both positive, both negative, or both zero.<span
+  style="mso-spacerun: yes">  </span>To check this condition we create a new
+  rule as follows:</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;text-indent:-.25in;
+  mso-list:l5 level1 lfo12;tab-stops:list .25in left 611.7pt'><![if !supportLists]>1.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]>From
+  the main file menu, select Create Object | Create Rule…<span
+  style="mso-spacerun: yes">  </span>The Create a new rule window appears.</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;text-indent:-.25in;
+  mso-list:l5 level1 lfo12;tab-stops:list .25in left 611.7pt'><![if !supportLists]>2.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]>Enter
+  the following expression into the rule box manually or by using the Rule
+  Assistant:</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'>(LR_TomorrowGCDir*TomorrowGCDir&gt;0)
+  or (LR_TomorrowGCDir=0 and TomorrowGCDir=0)</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'>This rule
+  returns either true or false.<span style="mso-spacerun: yes">  </span>If the
+  predicted and actual attributes both change in the same direction, the rule
+  returns true.<span style="mso-spacerun: yes">  </span>Otherwise the rule
+  returns false.<span style="mso-spacerun: yes">  </span>PolyAnalyst uses the
+  term <i style='mso-bidi-font-style:normal'><span style='mso-bidi-font-size:
+  10.0pt'>yes</span></i> to denote true and the term <i style='mso-bidi-font-style:
+  normal'><span style='mso-bidi-font-size:10.0pt'>no</span></i> to denote
+  false.</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;text-indent:-.25in;
+  mso-list:l5 level1 lfo12;tab-stops:list .25in left 611.7pt'><![if !supportLists]>3.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]>Name
+  the rule <i style='mso-bidi-font-style:normal'><span style='mso-bidi-font-size:
+  10.0pt'>Dir_OK</span></i>.<span style="mso-spacerun: yes">  </span>Click <b>OK</b>.<span
+  style="mso-spacerun: yes">  </span>The rule is added to the rules section in
+  the Workspace panel.</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;text-indent:-.25in;
+  mso-list:l5 level1 lfo12;tab-stops:list .25in left 611.7pt'><![if !supportLists]>4.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]>Apply
+  the rule to the world data set using the drag and drop method.<span
+  style="mso-spacerun: yes">  </span>Open the World data set.<span
+  style="mso-spacerun: yes">  </span>Notice that the last column is now this
+  new rule.</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'><a
+  name=s6><b><u>Step 6: Using the Summary Statistics Exploration Engine</u></b></a></p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'>We can
+  test our prediction by using Summary Statistics Exploration.</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;text-indent:-.25in;
+  mso-list:l2 level1 lfo14;tab-stops:list .25in left 611.7pt'><![if !supportLists]>1.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]>Single
+  Click the World data set to select it.<span style="mso-spacerun: yes"> 
+  </span>From the toolbar, click the <img width=23 height=23 id="_x0000_i1118"
+  src="img\t4\t4.button.gif"><span style="mso-spacerun:
+  yes"> </span>button.<span style="mso-spacerun: yes">  </span>The Summary
+  Statistics of Dataset – World window appears.<span style="mso-spacerun:
+  yes">  </span>Since we want characteristics of all the values, do not select
+  or deselect any values.<span style="mso-spacerun: yes">  </span>Click <b>OK</b>.<span
+  style="mso-spacerun: yes">  </span>The Summary Statistics Report appears in
+  the Reports section of the Workspace panel and opens in the Results panel.</p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'>Summary
+  Statistics Report: The Statistics report is divided into a text section and a
+  chart section.<span style="mso-spacerun: yes">  </span>The text section
+  contains a table for integer attributes and a table for logical
+  attributes.<span style="mso-spacerun: yes">  </span>Look at the logical
+  attributes table Dir_OK attribute.<span style="mso-spacerun: yes">  </span>In
+  613 out of 899 cases the attribute Dir_OK has the value true.<span
+  style="mso-spacerun: yes">  </span>In ratio, this means that in 68% percent
+  of the cases, or records in the dataset, the Linear Regression Exploration
+  Engine prediction for the direction of the change of the gold price is
+  correct.</p>
+  <p align=center style='margin-right:38.55pt;margin-left:.25in;text-align:
+  center;tab-stops:611.7pt'><img width=613 height=497 id="_x0000_i1114"
+  src="img\t4\t4.7.gif"></p>
+  <p align=center style='margin-right:38.55pt;margin-left:.25in;text-align:
+  center;tab-stops:611.7pt'><img width=613 height=512 id="_x0000_i1116"
+  src="img\t4\t4.8.gif"></p>
+  <p style='margin-right:38.55pt;margin-left:.25in;tab-stops:611.7pt'>Of
+  course, this preliminary result is of quite limited practical value. It is
+  far more important to predict the amount of the price change in addition to
+  its direction. However, this task is less trivial and requires the
+  utilization of other exploration engines of PolyAnalyst. Nevertheless, we
+  have just completed the first important step in building a successful trading
+  strategy. If you would like to continue this exploration on your own, try
+  using Find Laws or PolyNet Predictor rather than Linear Regression and
+  examining the results. Both algorithms will give more accurate predictions
+  than Linear Regression with this data.&nbsp;</p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:74.85pt;margin-bottom:
+0in;margin-left:.25in;margin-bottom:.0001pt;tab-stops:8.5in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+</body>
+
+</html>

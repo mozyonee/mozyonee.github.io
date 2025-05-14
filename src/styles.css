@@ -9,24 +9,28 @@
 }
 @font-face {
 	font-family: "bc";
-	src: url(../assets/fonts/Code-39-Logitogo.ttf)
+	src: url(../assets/fonts/Code-39-Logitogo.ttf);
 }
 
 @-webkit-keyframes caret {
-	0%, 49.99% {
-	  opacity: 0; /* Fully transparent */
+	0%,
+	49.99% {
+		opacity: 0; /* Fully transparent */
 	}
-	50%, 100% {
-	  opacity: 1; /* Fully opaque */
+	50%,
+	100% {
+		opacity: 1; /* Fully opaque */
 	}
 }
 
 @keyframes caret {
-	0%, 49.99% {
-	  opacity: 0; /* Fully transparent */
+	0%,
+	49.99% {
+		opacity: 0; /* Fully transparent */
 	}
-	50%, 100% {
-	  opacity: 1; /* Fully opaque */
+	50%,
+	100% {
+		opacity: 1; /* Fully opaque */
 	}
 }
 
@@ -62,7 +66,7 @@
 ::selection {
 	background: var(--hic);
 }
- 
+
 ::-moz-selection {
 	background: var(--hic);
 	color: white;
@@ -71,7 +75,7 @@
 html {
 	scroll-behavior: smooth;
 	-ms-scroll-snap-type: y proximity;
-	    scroll-snap-type: y proximity;
+	scroll-snap-type: y proximity;
 	cursor: url(../assets/images/cursor/static.png) 0 0, auto;
 }
 
@@ -94,8 +98,8 @@ a {
 }
 
 .close-header {
-    font-size: 24px;
-    text-decoration: none;
+	font-size: 24px;
+	text-decoration: none;
 }
 
 .close-header {
@@ -116,18 +120,21 @@ a {
 	width: 4px;
 	background-color: var(--textc);
 	-webkit-animation: caret 1s steps(1, end) infinite;
-	        animation: caret 1s steps(1, end) infinite;
+	animation: caret 1s steps(1, end) infinite;
 }
 
 .fade-out {
 	padding: 0 !important;
-    opacity: 0 !important;
-    max-height: 0 !important;
+	opacity: 0 !important;
+	max-height: 0 !important;
 	overflow: hidden;
 }
 
-header, main, ul li p {
-	transition: opacity 1s ease-in, height 2s ease-in-out, max-height 2s ease-in-out;
+header,
+main,
+ul li p {
+	transition: opacity 1s ease-in, height 2s ease-in-out,
+		max-height 2s ease-in-out;
 }
 
 header {
@@ -148,7 +155,7 @@ main {
 .close-main {
 	cursor: url(../assets/images/cursor/hover.png) 0 0, auto;
 	-webkit-filter: brightness(1);
-	        filter: brightness(1);
+	filter: brightness(1);
 	transition: -webkit-filter 0.25s ease-in;
 	transition: filter 0.25s ease-in;
 	transition: filter 0.25s ease-in, -webkit-filter 0.25s ease-in;
@@ -156,7 +163,7 @@ main {
 
 img.close-main:hover {
 	-webkit-filter: brightness(0.25);
-	        filter: brightness(0.25);
+	filter: brightness(0.25);
 }
 
 h2.close-main:hover {
@@ -169,24 +176,32 @@ h2 {
 
 hr {
 	border: none;
-    border-top: 1px solid var(--textc);
-    margin: 20px 0;
+	border-top: 1px solid var(--textc);
+	margin: 20px 0;
 }
 
 .content {
 	-moz-column-gap: 50px;
-	     column-gap: 50px;
+	column-gap: 50px;
 	max-width: 960px;
 	margin: 0 auto;
-    display: grid;
-    grid-template-areas: "A A" "B C" "D D";
-    grid-template-columns: 1fr 1fr;
+	display: grid;
+	grid-template-areas: "A A" "B C" "D D";
+	grid-template-columns: 1fr 1fr;
 }
 
-.content div:nth-child(1) { grid-area: A; }
-.content div:nth-child(2) { grid-area: B; }
-.content div:nth-child(3) { grid-area: C; }
-.content div:nth-child(4) { grid-area: D; }
+.content div:nth-child(1) {
+	grid-area: A;
+}
+.content div:nth-child(2) {
+	grid-area: B;
+}
+.content div:nth-child(3) {
+	grid-area: C;
+}
+.content div:nth-child(4) {
+	grid-area: D;
+}
 
 .stack ul {
 	display: flex;
@@ -197,28 +212,38 @@ hr {
 	text-decoration: underline;
 }
 
-.experience h3, .experience li, .education h3, .education li {
+.experience h3,
+.experience li,
+.education h3,
+.education li {
 	position: relative;
 	text-align: left;
 }
-.experience li, .education li {
+.experience li,
+.education li {
 	padding-left: 40px;
 }
-.projects h3, .projects li, .languages h3, .languages li {
+.projects h3,
+.projects li,
+.languages h3,
+.languages li {
 	position: relative;
 	text-align: right;
 }
-.projects li, .languages li {
+.projects li,
+.languages li {
 	padding-right: 40px;
 }
 
-.experience li::before, .education li::before {
+.experience li::before,
+.education li::before {
 	content: "-";
 	position: absolute;
 	top: 0;
 	left: 15px;
 }
-.projects li::after, .languages li::after {
+.projects li::after,
+.languages li::after {
 	content: "-";
 	position: absolute;
 	top: 0;
@@ -227,17 +252,19 @@ hr {
 
 .point h3 {
 	cursor: url(../assets/images/cursor/hover.png) 0 0, auto;
-	
+
 	margin-top: 25px;
 	margin-bottom: 10px;
 }
 
-
 .point {
 	display: grid;
 	grid-template-rows: 0fr 0fr;
-    transition: grid-template-rows 0.5s ease-in-out;
-    transition: grid-template-rows 0.5s ease-in-out, -ms-grid-rows 0.5s ease-in-out;
+	transition: grid-template-rows 0.5s ease-in-out;
+	transition: grid-template-rows 0.5s ease-in-out,
+		-ms-grid-rows 0.5s ease-in-out;
+	transition: grid-template-rows 0.5s ease-in-out,
+		-ms-grid-rows 0.5s ease-in-out;
 }
 
 .point.active {
@@ -246,7 +273,7 @@ hr {
 
 .point ul {
 	padding: 0;
-    list-style: none;
+	list-style: none;
 	opacity: 0;
 	transition: padding 0.5s ease-in-out, opacity 0.25s ease-in-out;
 
@@ -256,7 +283,7 @@ hr {
 	border: 1px solid var(--textc);
 	outline: 1px solid var(--textc);
 	outline-offset: -5px;
-    overflow: hidden;
+	overflow: hidden;
 }
 
 .point.active ul {
@@ -265,7 +292,8 @@ hr {
 	transition: padding 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
-.row ul, .row li {
+.row ul,
+.row li {
 	max-height: -webkit-min-content;
 	max-height: -moz-min-content;
 	max-height: min-content;
@@ -292,17 +320,18 @@ h4 span {
 
 h4 img:hover {
 	-webkit-filter: brightness(0.8);
-	        filter: brightness(0.8);
+	filter: brightness(0.8);
 }
- 
-.point.active h3::before, .point:hover h3::before {
-	content: '/';
+
+.point.active h3::before,
+.point:hover h3::before {
+	content: "/";
 }
 
 @media (hover: none) {
-    .point h3::before {
-        content: '';
-    }
+	.point h3::before {
+		content: "";
+	}
 }
 
 @media screen and (max-width: 800px) {
@@ -316,14 +345,16 @@ h4 img:hover {
 	.point p {
 		font-size: 18px;
 	}
-	.point h3, .point li {
+	.point h3,
+	.point li {
 		text-align: center !important;
 	}
 	.point li {
 		padding: 0;
 	}
-	.point li::after, .point li::before {
-		content: '';
+	.point li::after,
+	.point li::before {
+		content: "";
 	}
 	.content {
 		grid-template-areas: "A" "B" "C" "D";

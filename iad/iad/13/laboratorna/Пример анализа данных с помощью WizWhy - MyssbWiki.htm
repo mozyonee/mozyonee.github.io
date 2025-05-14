@@ -1,0 +1,337 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0050)file://H:\БД и ЭС\Щербаков Методичка\index.php.htm -->
+<html dir="ltr" xml:lang="ru" xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><title>Пример анализа данных с помощью WizWhy - MyssbWiki</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="Пример анализа данных с помощью WizWhy,Data mining,Практические работы по WW, ФУИТ, ФОДО, IT, Осень 2006" name="KEYWORDS">
+<meta content="index,follow" name="robots"><link href="http://wiki.myssb.ru/favicon.ico" rel="shortcut icon">
+<style type="text/css" media="screen,projection">@import url( /skins/monobook/main.css );
+</style>
+<link media="print" href="%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D1%81%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E%20WizWhy%20-%20MyssbWiki_files/commonPrint.css" type="text/css" rel="stylesheet"><!--[if lt IE 5.5000]><style type="text/css">@import "/skins/monobook/IE50Fixes.css";</style><![endif]--><!--[if IE 5.5000]><style type="text/css">@import "/skins/monobook/IE55Fixes.css";</style><![endif]--><!--[if gte IE 6]>
+<STYLE type=text/css>@import url( /skins/monobook/IE60Fixes.css );
+</STYLE>
+<![endif]--><!--[if IE]>
+<SCRIPT src="" type=text/javascript></SCRIPT>
+
+<META http-equiv=imagetoolbar content=no><![endif]-->
+<script src="%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D1%81%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E%20WizWhy%20-%20MyssbWiki_files/index.htm" type="text/javascript"></script>
+
+<script src="%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D1%81%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E%20WizWhy%20-%20MyssbWiki_files/wikibits.js" type="text/javascript"></script>
+
+<style type="text/css">@import url( /index.php?title=MediaWiki:Monobook.css&action=raw&ctype=text/css&smaxage=18000 );
+@import url( /index.php?title=-&action=raw&gen=css&maxage=18000 );
+</style>
+
+<meta content="MSHTML 6.00.2900.2995" name="GENERATOR"></head>
+<body class="ns-0">
+<div id="titleBar"></div>
+<div id="globalWrapper">
+<div id="column-content">
+<div id="content"><a id="contentTop" name="top"></a>
+<h1 class="firstHeading">Пример анализа данных с помощью WizWhy</h1>
+<div id="bodyContent">
+<div id="contentSub"></div><!-- start content -->
+<p></p>
+<table class="toc" id="toc">
+  <tbody>
+  <tr>
+    <td>
+      <div id="toctitle">
+      <h2>Содержание</h2><span class="toctoggle">[<a class="internal" id="togglelink" href="javascript:toggleToc()">убрать</a>]</span> <span class="toctoggle">[<a id="togglelink" class="internal" href="javascript:toggleToc()">убрать</a>]</span></div>
+      <ul>
+        <li class="toclevel-1"><a href="file:///H:/%D0%91%D0%94%20%D0%B8%20%D0%AD%D0%A1/%D0%A9%D0%B5%D1%80%D0%B1%D0%B0%D0%BA%D0%BE%D0%B2%20%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D1%87%D0%BA%D0%B0/index.php.htm#.D0.A7.D1.82.D0.BE_.D0.B5.D1.81.D1.82.D1.8C_.D1.80.D0.B5.D0.B7.D1.83.D0.BB.D1.8C.D1.82.D0.B0.D1.82_.D0.B0.D0.BD.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0"><span class="tocnumber">1</span> <span class="toctext">Что есть результат 
+        анализа</span></a> 
+        </li><li class="toclevel-1"><a href="file:///H:/%D0%91%D0%94%20%D0%B8%20%D0%AD%D0%A1/%D0%A9%D0%B5%D1%80%D0%B1%D0%B0%D0%BA%D0%BE%D0%B2%20%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D1%87%D0%BA%D0%B0/index.php.htm#.D0.A6.D0.B5.D0.BB.D1.8C_.D0.B0.D0.BD.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0"><span class="tocnumber">2</span> <span class="toctext">Цель анализа</span></a> 
+        </li><li class="toclevel-1"><a href="file:///H:/%D0%91%D0%94%20%D0%B8%20%D0%AD%D0%A1/%D0%A9%D0%B5%D1%80%D0%B1%D0%B0%D0%BA%D0%BE%D0%B2%20%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D1%87%D0%BA%D0%B0/index.php.htm#.D0.97.D0.B0.D0.B3.D1.80.D1.83.D0.B6.D0.B0.D0.B5.D0.BC_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5"><span class="tocnumber">3</span> <span class="toctext">Загружаем данные</span></a> 
+
+        </li><li class="toclevel-1"><a href="file:///H:/%D0%91%D0%94%20%D0%B8%20%D0%AD%D0%A1/%D0%A9%D0%B5%D1%80%D0%B1%D0%B0%D0%BA%D0%BE%D0%B2%20%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D1%87%D0%BA%D0%B0/index.php.htm#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.B0.D0.B8.D0.B2.D0.B0.D0.B5.D0.BC_.D0.BF.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.D1.8B"><span class="tocnumber">4</span> <span class="toctext">Настраиваем 
+        параметры</span></a> 
+        <ul>
+          <li class="toclevel-2"><a href="file:///H:/%D0%91%D0%94%20%D0%B8%20%D0%AD%D0%A1/%D0%A9%D0%B5%D1%80%D0%B1%D0%B0%D0%BA%D0%BE%D0%B2%20%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D1%87%D0%BA%D0%B0/index.php.htm#.D0.9F.D1.80.D0.B5.D0.B4.D1.81.D0.BA.D0.B0.D0.B7.D1.8B.D0.B2.D0.B0.D0.B5.D0.BC.D0.B0_.D0.BF.D0.B5.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D0.B0.D1.8F"><span class="tocnumber">4.1</span> <span class="toctext">Предсказываема 
+          переменная</span></a> 
+          </li><li class="toclevel-2"><a href="file:///H:/%D0%91%D0%94%20%D0%B8%20%D0%AD%D0%A1/%D0%A9%D0%B5%D1%80%D0%B1%D0%B0%D0%BA%D0%BE%D0%B2%20%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D1%87%D0%BA%D0%B0/index.php.htm#.D0.A5.D0.B0.D1.80.D0.B0.D0.BA.D1.82.D0.B5.D1.80.D0.B8.D1.81.D1.82.D0.B8.D0.BA.D0.B8_.D1.80.D0.B5.D0.B7.D1.83.D0.BB.D1.8C.D1.82.D0.B8.D1.80.D1.83.D1.8E.D1.89.D0.B8.D1.85_.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB"><span class="tocnumber">4.2</span> <span class="toctext">Характеристики 
+          результирующих правил</span></a> 
+          </li><li class="toclevel-2"><a href="file:///H:/%D0%91%D0%94%20%D0%B8%20%D0%AD%D0%A1/%D0%A9%D0%B5%D1%80%D0%B1%D0%B0%D0%BA%D0%BE%D0%B2%20%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D1%87%D0%BA%D0%B0/index.php.htm#.D0.A6.D0.B5.D0.BD.D0.B0_.D0.BE.D1.88.D0.B8.D0.B1.D0.BA.D0.B8"><span class="tocnumber">4.3</span> <span class="toctext">Цена ошибки</span></a> 
+          </li><li class="toclevel-2"><a href="file:///H:/%D0%91%D0%94%20%D0%B8%20%D0%AD%D0%A1/%D0%A9%D0%B5%D1%80%D0%B1%D0%B0%D0%BA%D0%BE%D0%B2%20%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D1%87%D0%BA%D0%B0/index.php.htm#.D0.9F.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.D1.8B_.D0.B2.D1.8B.D0.B2.D0.BE.D0.B4.D0.B0_.D1.80.D0.B5.D0.B7.D1.83.D0.BB.D1.8C.D1.82.D0.B0.D1.82.D0.BE.D0.B2"><span class="tocnumber">4.4</span> <span class="toctext">Параметры вывода 
+          результатов</span></a> 
+          </li><li class="toclevel-2"><a href="file:///H:/%D0%91%D0%94%20%D0%B8%20%D0%AD%D0%A1/%D0%A9%D0%B5%D1%80%D0%B1%D0%B0%D0%BA%D0%BE%D0%B2%20%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D1%87%D0%BA%D0%B0/index.php.htm#.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.BF.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.D1.8B_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B8"><span class="tocnumber">4.5</span> <span class="toctext">Дополнительные 
+          параметры настройки</span></a> 
+          </li><li class="toclevel-2"><a href="file:///H:/%D0%91%D0%94%20%D0%B8%20%D0%AD%D0%A1/%D0%A9%D0%B5%D1%80%D0%B1%D0%B0%D0%BA%D0%BE%D0%B2%20%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D1%87%D0%BA%D0%B0/index.php.htm#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0.D0.B5.D0.BC_.D0.B0.D0.BD.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.82.D0.BE.D1.80"><span class="tocnumber">4.6</span> <span class="toctext">Запускаем 
+          анализатор</span></a> </li></ul>
+        </li><li class="toclevel-1"><a href="file:///H:/%D0%91%D0%94%20%D0%B8%20%D0%AD%D0%A1/%D0%A9%D0%B5%D1%80%D0%B1%D0%B0%D0%BA%D0%BE%D0%B2%20%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D1%87%D0%BA%D0%B0/index.php.htm#.D0.98.D0.BD.D1.82.D0.B5.D1.80.D0.BF.D1.80.D0.B5.D1.82.D0.B8.D1.80.D1.83.D0.B5.D0.BC_.D1.80.D0.B5.D0.B7.D1.83.D0.BB.D1.8C.D1.82.D0.B0.D1.82.D1.8B"><span class="tocnumber">5</span> <span class="toctext">Интерпретируем 
+        результаты</span></a> 
+        </li><li class="toclevel-1"><a href="file:///H:/%D0%91%D0%94%20%D0%B8%20%D0%AD%D0%A1/%D0%A9%D0%B5%D1%80%D0%B1%D0%B0%D0%BA%D0%BE%D0%B2%20%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D1%87%D0%BA%D0%B0/index.php.htm#.D0.A1.D0.BE.D1.85.D1.80.D0.B0.D0.BD.D1.8F.D0.B5.D0.BC_.D1.80.D0.B5.D0.B7.D1.83.D0.BB.D1.8C.D1.82.D0.B0.D1.82.D1.8B"><span class="tocnumber">6</span> <span class="toctext">Сохраняем 
+        результаты</span></a> </li></ul></td></tr></tbody></table>
+<p>
+<script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "показать"; var tocHideText = "убрать"; showTocToggle(); } </script>
+</p>
+<div class="editsection" style="FLOAT: right; MARGIN-LEFT: 5px">[<a title="Пример анализа данных с помощью WizWhy" href="http://wiki.myssb.ru/index.php?title=%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80_%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85_%D1%81_%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E_WizWhy&amp;action=edit&amp;section=1">править</a>]</div><a name=".D0.A7.D1.82.D0.BE_.D0.B5.D1.81.D1.82.D1.8C_.D1.80.D0.B5.D0.B7.D1.83.D0.BB.D1.8C.D1.82.D0.B0.D1.82_.D0.B0.D0.BD.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0"></a>
+<h2>Что есть результат анализа</h2>
+<p>Смысл обработки данный в WizWhy заключается в следующем: по некоторому 
+алгоритму программа отыскивает в данных логические закономерности, которые 
+«представляет» с помощью языка правила «если – то». Например (условный пример), 
+если ответ на вопрос 1 — 3 (первое условие), и на вопрос 4 — 1(второе условие), 
+и на вопрос 15 — 1(третье условие), то ответ на вопрос 20 с такой-то 
+вероятностью — 2. </p>
+<p>Оператор назначает предсказываемую переменную, параметры поиска: 
+предсказываемое значение зависимой переменной (какое-то конкретное, или 
+диапазон, или все) требуемую точность правила, количество условий в правилах и 
+другие. О них ниже. </p>
+<p>Эти правила и подлежат интерпретации в соответствием со смыслом 
+предсказываемой переменной и переменных попавших в "условия". </p>
+<div class="editsection" style="FLOAT: right; MARGIN-LEFT: 5px">[<a title="Пример анализа данных с помощью WizWhy" href="http://wiki.myssb.ru/index.php?title=%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80_%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85_%D1%81_%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E_WizWhy&amp;action=edit&amp;section=2">править</a>]</div><a name=".D0.A6.D0.B5.D0.BB.D1.8C_.D0.B0.D0.BD.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0"></a>
+<h2>Цель анализа</h2>
+<p>Итак, мы будем использовать "реальные" данные. Цель и задачи того 
+исследования по ряду соображений я вам сообщить не могу. Познакомившись с 
+вопросником, думаю, многие догадались что речь идет об исследовании персонала. 
+Этим придется ограничится. Поэтому! Привлекаем фантазию! Соображаем, для чего 
+может понадобится такая анкета? Строим свои гипотезы и начинаем их проверять. 
+</p>
+<p>Далее я буду проверять выдвинутую ранее гипотезу о том, что для людей более 
+старшего возраста "быть твердо уверенным в сохранении рабочего места за собой" 
+более значимо, чем для относительно более молодых людей. </p>
+<div class="editsection" style="FLOAT: right; MARGIN-LEFT: 5px">[<a title="Пример анализа данных с помощью WizWhy" href="http://wiki.myssb.ru/index.php?title=%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80_%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85_%D1%81_%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E_WizWhy&amp;action=edit&amp;section=3">править</a>]</div><a name=".D0.97.D0.B0.D0.B3.D1.80.D1.83.D0.B6.D0.B0.D0.B5.D0.BC_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5"></a>
+<h2>Загружаем данные</h2>
+<ol>
+  <li>WizWhy не умеет читать файлы excel, поэтому прежде чем воспользоваться 
+  имеющимися данными их нужно конвертировать в формат, понятный WizWhy, 
+  например, в .dbf. Открываем файл с данными в Excel, Файл--&gt; Сохранить 
+  как--&gt; DBF4 (dBASE IV) (*.dbf) 
+  </li><li>Окно программы при запуске выглядит примерно так. Чтобы загрузить данные, 
+  выбираем тип файла источника (в нашем случае dBase), закорючка 1 и нажимаем 
+  кнопку Open Data of Type, закорючка 2, фигуры 1. В результате во вкладке Basic 
+  Data (закорючка 3, фигура 2) появятся нужные данные (закорючка 4, фигура 2). 
+  </li></ol>
+<div class="center">
+<div class="thumb tnone">
+<div style="WIDTH: 602px"><a class="internal" title="Фигура 1" href="http://wiki.myssb.ru/index.php?title=%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5:Dm1.gif"><img alt="Фигура 1" src="%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D1%81%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E%20WizWhy%20-%20MyssbWiki_files/Dm1.gif" longdesc="/index.php?title=%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5:Dm1.gif" width="600" height="440"></a> 
+
+<div class="thumbcaption">Фигура 1</div></div></div></div>
+<div class="center">
+<div class="thumb tnone">
+<div style="WIDTH: 602px"><a class="internal" title="Фигура 2" href="http://wiki.myssb.ru/index.php?title=%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5:Dm2.gif"><img alt="Фигура 2" src="%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D1%81%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E%20WizWhy%20-%20MyssbWiki_files/Dm2.gif" longdesc="/index.php?title=%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5:Dm2.gif" width="600" height="436"></a> 
+
+<div class="thumbcaption">Фигура 2</div></div></div></div>
+<div class="editsection" style="FLOAT: right; MARGIN-LEFT: 5px">[<a title="Пример анализа данных с помощью WizWhy" href="http://wiki.myssb.ru/index.php?title=%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80_%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85_%D1%81_%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E_WizWhy&amp;action=edit&amp;section=4">править</a>]</div><a name=".D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.B0.D0.B8.D0.B2.D0.B0.D0.B5.D0.BC_.D0.BF.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.D1.8B"></a>
+<h2>Настраиваем параметры</h2>
+<p>Итак, я буду проверять гипотезу о том, что для работников старшего возраста 
+"быть твердо уверенным в сохранении рабочего места за собой" более важно, чем 
+для их более молодых коллег. </p>
+<div class="editsection" style="FLOAT: right; MARGIN-LEFT: 5px">[<a title="Пример анализа данных с помощью WizWhy" href="http://wiki.myssb.ru/index.php?title=%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80_%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85_%D1%81_%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E_WizWhy&amp;action=edit&amp;section=5">править</a>]</div><a name=".D0.9F.D1.80.D0.B5.D0.B4.D1.81.D0.BA.D0.B0.D0.B7.D1.8B.D0.B2.D0.B0.D0.B5.D0.BC.D0.B0_.D0.BF.D0.B5.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D0.B0.D1.8F"></a>
+<h3>Предсказываема переменная</h3>
+<p>Предсказываемой переменной в этом случае будет переменная, соответствующая 
+вопросу 6. Это переменная №8 (при конвертации WizWhy преобозначил по-своему 
+имена переменных, будьте внимательны). Ставлю галочук против нужной переменной в 
+столбце Dependent Variable (фигура 3, закорючка 2). Далее, я исключил из анализа 
+переменную PERS, поскольку это всего лишь номер записи (фигура 3, закорючка 2). 
+Кроме того, я снял галочку Analyze the Dependent Variable as Boolean (фигура 3, 
+закорючка 3), поскольку переменная принимает значения от 1 до 5 (по факту до 4). 
+</p>
+<div class="center">
+<div class="thumb tnone">
+<div style="WIDTH: 602px"><a class="internal" title="Фигура 3" href="http://wiki.myssb.ru/index.php?title=%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5:Dm3.gif"><img alt="Фигура 3" src="%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D1%81%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E%20WizWhy%20-%20MyssbWiki_files/Dm3.gif" longdesc="/index.php?title=%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5:Dm3.gif" width="600" height="434"></a> 
+
+<div class="thumbcaption">Фигура 3</div></div></div></div>
+<div class="editsection" style="FLOAT: right; MARGIN-LEFT: 5px">[<a title="Пример анализа данных с помощью WizWhy" href="http://wiki.myssb.ru/index.php?title=%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80_%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85_%D1%81_%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E_WizWhy&amp;action=edit&amp;section=6">править</a>]</div><a name=".D0.A5.D0.B0.D1.80.D0.B0.D0.BA.D1.82.D0.B5.D1.80.D0.B8.D1.81.D1.82.D0.B8.D0.BA.D0.B8_.D1.80.D0.B5.D0.B7.D1.83.D0.BB.D1.8C.D1.82.D0.B8.D1.80.D1.83.D1.8E.D1.89.D0.B8.D1.85_.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB"></a>
+<h3>Характеристики результирующих правил</h3>
+<p>Переходим к следующей вкладке. При снятой галочке Analyze the Dependent 
+Variable as Boolean здесь у нас только два параметра, которые можно настроить: 
+Minimim number of cases in a rule и Maximim number of conditions in a rule. По 
+русски соответственно минимальное количество наблюдений для которых правило 
+будет верно и максимальное число независимых переменных, включаемых в правило. В 
+данном примере я установил первый параметр равным 20 (или 10% от всей выборки, 
+по опыту -- смело, для такой маленькой выборки) а максимальное число условий 
+(независимых переменных) оставил равным 3. Когда больше -- трудно 
+интерпретировать результаты. </p>
+<div class="center">
+<div class="thumb tnone">
+<div style="WIDTH: 602px"><a class="internal" title="Фигура 4" href="http://wiki.myssb.ru/index.php?title=%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5:Dm4.gif"><img alt="Фигура 4" src="%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D1%81%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E%20WizWhy%20-%20MyssbWiki_files/Dm4.gif" longdesc="/index.php?title=%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5:Dm4.gif" width="600" height="439"></a> 
+
+<div class="thumbcaption">Фигура 4</div></div></div></div>
+<p>Если бы галочка Analyze the Dependent Variable as Boolean была оставлена, 
+WizWhy позволил бы нам настроить и другие параменты анализа (фигура 5). Можно 
+строить правила, которые бы предсказывали значение зависимой переменной больше 2 
+(1, 3) и меньше 2 (3, 4) (тогда нужно было бы выставить настройки как показано 
+закорючкой 1). </p>
+<p>Minimum probability of if-then rules и Minimum probability of if-then-NOT 
+rules (минимальная вероятность правила if-then и if-then-NOT) -- это параметры, 
+задающие необходимую точность правил. То есть Minimum probability of if-then 
+rules = 27% означает, что мы указываем WizWhy, что нас интересуют только такие 
+правила, которые ошибаются не чаще, чем в 73% случаев. Аналогично для 
+if-then-NOT. </p>
+<div class="center">
+<div class="thumb tnone">
+<div style="WIDTH: 602px"><a class="internal" title="Фигура 5" href="http://wiki.myssb.ru/index.php?title=%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5:Dm5.gif"><img alt="Фигура 5" src="%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D1%81%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E%20WizWhy%20-%20MyssbWiki_files/Dm5.gif" longdesc="/index.php?title=%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5:Dm5.gif" width="600" height="432"></a> 
+
+<div class="thumbcaption">Фигура 5</div></div></div></div>
+<div class="editsection" style="FLOAT: right; MARGIN-LEFT: 5px">[<a title="Пример анализа данных с помощью WizWhy" href="http://wiki.myssb.ru/index.php?title=%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80_%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85_%D1%81_%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E_WizWhy&amp;action=edit&amp;section=7">править</a>]</div><a name=".D0.A6.D0.B5.D0.BD.D0.B0_.D0.BE.D1.88.D0.B8.D0.B1.D0.BA.D0.B8"></a>
+<h3>Цена ошибки</h3>
+<p>Следующая вкладка заведует параметром "цена ошибки". Ценой ошибки можно 
+задавать дополнительные ограничения на точность правил. Например, для нас не 
+очень критично диагностировать по ряду симптомов у пациента заболевание, 
+которого у него нет на самом деле (Цена "ложной тревоги" Cost of fale alarm). И 
+направить на дополнительное исследование. Но очень критично (птичий грипп, 
+скажем) не диагностировать заболевание, которое на самом деле есть (Цена ошибки 
+Cost of miss). Варьируя этими параметрами (фигура 7) исследователь может 
+учитывать относительные цены ошибки и "ложной тревоги". </p>
+<p>Если бы галочка Analyze the Dependent Variable as Boolean снята, WizWhy 
+самостоятельно устанавливает цены ошибок (фигура 6). </p>
+<div class="center">
+<div class="thumb tnone">
+<div style="WIDTH: 602px"><a class="internal" title="Фигура 6" href="http://wiki.myssb.ru/index.php?title=%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5:Dm6.gif"><img alt="Фигура 6" src="%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D1%81%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E%20WizWhy%20-%20MyssbWiki_files/Dm6.gif" longdesc="/index.php?title=%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5:Dm6.gif" width="600" height="431"></a> 
+
+<div class="thumbcaption">Фигура 6</div></div></div></div>
+<div class="center">
+<div class="thumb tnone">
+<div style="WIDTH: 602px"><a class="internal" title="Фигура 7" href="http://wiki.myssb.ru/index.php?title=%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5:Dm7.gif"><img alt="Фигура 7" src="%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D1%81%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E%20WizWhy%20-%20MyssbWiki_files/Dm7.gif" longdesc="/index.php?title=%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5:Dm7.gif" width="600" height="429"></a> 
+
+<div class="thumbcaption">Фигура 7</div></div></div></div>
+<div class="editsection" style="FLOAT: right; MARGIN-LEFT: 5px">[<a title="Пример анализа данных с помощью WizWhy" href="http://wiki.myssb.ru/index.php?title=%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80_%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85_%D1%81_%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E_WizWhy&amp;action=edit&amp;section=8">править</a>]</div><a name=".D0.9F.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.D1.8B_.D0.B2.D1.8B.D0.B2.D0.BE.D0.B4.D0.B0_.D1.80.D0.B5.D0.B7.D1.83.D0.BB.D1.8C.D1.82.D0.B0.D1.82.D0.BE.D0.B2"></a>
+<h3>Параметры вывода результатов</h3>
+<p>Вкладка Rule Report (фигура 8) заведует отображением результатов. Maximum 
+rules to be displayed -- максимальное количество правил, которое WizWhy вам 
+покажет. По умолчанию 100. Впрочем найдет WizWhy все правила, которые сочтет 
+нужным, и вежливо вас уведомит, что нашла 11320 правли, но покажет столько, 
+сколько попросите. </p>
+<p>Полученные правила сортируются в отчете (Sort rules by) по: </p>
+<ul>
+  <li>significance level -- уровню достоверности (= 1-вероятность ошибки) 
+  </li><li>(error) probability -- вероятность ошибки 
+  </li><li>number of cases -- число наблюдение, которые "попадают под правлио" 
+</li></ul>
+<p>Кроме того, для каждого правила WizWhy указывает конкретные записи 
+"попадающие под" и "не попадающие под" правило. Количество таких примеров 
+задается параметрами Rule is in effect и Rule is NOT in effect. </p>
+<div class="center">
+<div class="thumb tnone">
+<div style="WIDTH: 602px"><a class="internal" title="Фигура 8" href="http://wiki.myssb.ru/index.php?title=%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5:Dm8.gif"><img alt="Фигура 8" src="%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D1%81%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E%20WizWhy%20-%20MyssbWiki_files/Dm8.gif" longdesc="/index.php?title=%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5:Dm8.gif" width="600" height="430"></a> 
+
+<div class="thumbcaption">Фигура 8</div></div></div></div>
+<div class="editsection" style="FLOAT: right; MARGIN-LEFT: 5px">[<a title="Пример анализа данных с помощью WizWhy" href="http://wiki.myssb.ru/index.php?title=%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80_%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85_%D1%81_%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E_WizWhy&amp;action=edit&amp;section=9">править</a>]</div><a name=".D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.BF.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.D1.8B_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B8"></a>
+<h3>Дополнительные параметры настройки</h3>
+<p>Вообще говоря, этих настроек достаточно для "разведочного" анализа. 
+Оставшиеся вкладки отвечают за: </p>
+<ul>
+  <li>"ручное управление" переменными, учавствующими в анализе. Вкладка Manual 
+  Select. Когда-нибудь напишу более подробно об этом. Когда сам разберусь!-) 
+  </li><li>формат отображения данных, там точка отделяет десятичную часть или 
+  запятая... Вкладка Data format; 
+  </li><li>файл, в который будет выведен результат -- Prediction input. </li></ul>
+<div class="editsection" style="FLOAT: right; MARGIN-LEFT: 5px">[<a title="Пример анализа данных с помощью WizWhy" href="http://wiki.myssb.ru/index.php?title=%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80_%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85_%D1%81_%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E_WizWhy&amp;action=edit&amp;section=10">править</a>]</div><a name=".D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0.D0.B5.D0.BC_.D0.B0.D0.BD.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.82.D0.BE.D1.80"></a>
+<h3>Запускаем анализатор</h3>
+<p>После того, как настройки сделаны, кликаем по кнопке Issue Rules (зкорючка 1 
+фигуры 9). О том, что анализ идет вас будет уведомлять индикатор (закорючка 
+2)!-) Дождитесь результатов! </p>
+<p><br></p>
+<div class="center">
+<div class="thumb tnone">
+<div style="WIDTH: 602px"><a class="internal" title="Фигура 9" href="http://wiki.myssb.ru/index.php?title=%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5:Dm9.gif"><img alt="Фигура 9" src="%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D1%81%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E%20WizWhy%20-%20MyssbWiki_files/Dm9.gif" longdesc="/index.php?title=%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5:Dm9.gif" width="600" height="429"></a> 
+
+<div class="thumbcaption">Фигура 9</div></div></div></div>
+<div class="editsection" style="FLOAT: right; MARGIN-LEFT: 5px">[<a title="Пример анализа данных с помощью WizWhy" href="http://wiki.myssb.ru/index.php?title=%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80_%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85_%D1%81_%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E_WizWhy&amp;action=edit&amp;section=11">править</a>]</div><a name=".D0.98.D0.BD.D1.82.D0.B5.D1.80.D0.BF.D1.80.D0.B5.D1.82.D0.B8.D1.80.D1.83.D0.B5.D0.BC_.D1.80.D0.B5.D0.B7.D1.83.D0.BB.D1.8C.D1.82.D0.B0.D1.82.D1.8B"></a>
+<h2>Интерпретируем результаты</h2>
+<p>После того, как WizWhy закончит расчеты, на экран будет подана примерно такая 
+картинка (фигура 10). Если не такая, то кликните по элементу If-then-rules 
+report в левом окне (закорючка 1, фигура 10). В среднем окне будут отражены те 
+самые, правила, которые нужно интерпретировать. </p>
+<div class="center">
+<div class="thumb tnone">
+<div style="WIDTH: 602px"><a class="internal" title="Фигура 10" href="http://wiki.myssb.ru/index.php?title=%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5:Dm10.gif"><img alt="Фигура 10" src="%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D1%81%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E%20WizWhy%20-%20MyssbWiki_files/Dm10.gif" longdesc="/index.php?title=%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5:Dm10.gif" width="600" height="450"></a> 
+
+<div class="thumbcaption">Фигура 10</div></div></div></div>
+<p>"Читать" эти правила довольно легко. Для примера расшифрую первое полученное. 
+</p><pre>If  N6 is 1,00
+       and N13 is 1,00
+       and N33 is 2,00
+       Then
+       N8 is not  more than 1,94
+       Rule's probability: 0,632
+       The rule exists in 24 records.
+       Significance Level:   Error probability &lt;  0,0000001
+       Positive Examples (records' serial numbers): 
+       13, 51, 53, 56, 62, 72, 73, 77, 138, 139
+       Negative Examples (records' serial numbers): 
+       38, 43, 54, 58, 61, 65, 80, 83, 145, 147
+</pre>
+<p>На человеческий переводится примерно так: </p><pre>Если ответ на вопрос 4 (помните о смещении?) - 1 (наивысшая важность)
+       и ответ на вопрос 11 - 1
+       и ответ на вопрос 31 - 2
+       Тогда
+       ответ на вопрос 8 (предсказываемая переменная) больше чем 1,94
+       (т. к. в настройках мы сняли галочку Analyze the Dependent Variable as Boolean)
+       то есть 2 или 3 или 4
+       вероятность ошибки &lt;1%
+       примеры строк, для которых правило справедливо:
+       13, 51, 53 и т. д.
+       примеры строк, для которых правило не справедливо:
+       38, 43, 54 и т. д.
+</pre>
+<p>И что? Бегло пробежав по всем правилам можно заметить, что в первых десятках 
+нет правил для значений предсказываемой переменной &lt;1,94 (т. е. 1). То есть 
+результаты позволяют выявить группы для которых важность "быть твердо уверенным 
+в сохранении рабочего места за собой" (впорос 6) равна 2 и более. А для 
+проверяемой гипотезы нас интересуют те, кто отвечают 1 или 2 на вопрос 6. Что 
+делать? </p>
+<p>Перенастраиваем параметры анализа следующим образом: </p>
+<ul>
+  <li>Ставим галочку Analyze the Dependent Variable as Boolean во вкладке Basic 
+  Data; 
+  </li><li>Ставим галочку Less or equal than во вкладке Rule Parametrs и задаем этом 
+  параметру значение 2. </li></ul>
+<p>Таким образом, мы даем задание WizWhy найти правила, предсказывающие ответ 1 
+или 2 на вопрос 6. Все остальные настройки не изменяем. </p>
+<p>Запускаем анализ. Смотрим результаты. Например первое выданное WizWhy 
+правило: </p><pre>If  N18 is 1,00 ... 2,00 (average = 1,67 )
+       and N33 is 2,00
+       Then
+       N8 is  less than or equal to 2,00
+       Rule's probability: 0,989
+       The rule exists in 90 records.
+       Significance Level:  Error probability is almost 0
+       Positive Examples (records' serial numbers): 
+       10, 13, 14, 28, 30, 31, 33, 38, 40, 41
+       Negative Examples (records' serial numbers): 
+       186
+</pre><pre>Если ответ на вопрос 16 (помните о смещении?) 1 или 2
+       и ответ на вопрос 31 - 2, 
+       То
+       Ответ на вопрос 1 или 2
+       С очень высокой вероятностью
+       Правило "накрывает" 90 записей.
+</pre>
+<p>На русском языке это будет приметро так: <i>быть твердо уверенным в 
+сохранении рабочего места за собой имеет наивысшую и высокую важность для 
+категорий, которым очень важно "работать в успешной, престижной компании" 
+(вопрос 16) и отвечающий - женщина (вопрос 31 - ответ 2).</i> </p>
+<p>Второе правило интерпретируется примерно так: <i>быть твердо уверенным в 
+сохранении рабочего места за собой имеет наивысшую и высокую важность для 
+категорий, которым очень важно "работать в успешной, престижной компании" 
+(вопрос 16) и отвечающий редко или очень редко боится "выразить несогласие с 
+руководителем" (вопрос 29 -- ответ 3-5) и отвечающий - женщина (вопрос 31 - 
+ответ 2).</i> </p>
+<p>Третье правило: <i>быть твердо уверенным в сохранении рабочего места за собой 
+имеет наивысшую и высокую важность для категорий, которым не очень важно "иметь 
+возможность карьерного роста" (вопрос 14 - ответ 2-4 и не очень важно "работать 
+в успешной, престижной компании" (вопрос 16 - ответ 3, 4).</i> </p>
+<p>Упс! Наша гипотеза не находит подтверждения! Внимание! На по данным 
+полученным с использованием ЭТОЙ анкеты и на ЭТОЙ выборке. </p>
+<p>Конечно, было бы интересно задать предсказываемой переменной возраст и 
+постотреть различные ценностные установки для различных возрастов. Соотнести 
+полученные результаты с этим, но эта статья про технику анализа с использованием 
+WizWhy, а не про методологию постановки и решения задачи в WizWhy! </p>
+<div class="editsection" style="FLOAT: right; MARGIN-LEFT: 5px">[<a title="Пример анализа данных с помощью WizWhy" href="http://wiki.myssb.ru/index.php?title=%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80_%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85_%D1%81_%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E_WizWhy&amp;action=edit&amp;section=12">править</a>]</div><a name=".D0.A1.D0.BE.D1.85.D1.80.D0.B0.D0.BD.D1.8F.D0.B5.D0.BC_.D1.80.D0.B5.D0.B7.D1.83.D0.BB.D1.8C.D1.82.D0.B0.D1.82.D1.8B"></a>
+<h2>Сохраняем результаты</h2>
+<p></p>
+<ol>
+  <li>Формулирование проверяемой гипотезы; 
+  </li><li>Настройки, которые вы использовали для поиска правил в WizWhy: 
+  <ul>
+    <li>что было выбрано предсказываемой переменной (обязательно); 
+    </li><li>какое значение предсказывалось (обязательно); 
+    </li><li>какие было другие настройке (желательно); 
+    </li><li>Комментарии к выбору настроек (почему вы их установили таким, какими 
+    установили) очень желательны! </li></ul>
+  </li><li>Интерпретация наиболее важных и итересных с вашей точки зрения правил. 
+  Коммертарий, почему вы считаете эти правила важными. 
+  </li><li>Вывод о возможности или невозможности отвергнуть выдвинутую вами гипотезу. 
+  </li></ol></div></div></div></div>
+</body></html>

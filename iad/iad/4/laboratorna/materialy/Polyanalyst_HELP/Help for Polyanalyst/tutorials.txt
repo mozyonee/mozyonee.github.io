@@ -1,0 +1,59 @@
+/////////////////////////////////////////////////////////////
+
+Thank you for using Megaputer Intelligence PolyAnalyst.  We hope 
+you find our product to be useful in meeting all your data mining 
+needs.  Please take the time to read the following simple 
+instructions regarding how to use these tutorials.
+
+
+	
+
+1.  Overview
+
+2.  Printing
+
+3.  Errors
+----------------------------------------------------------------
+
+1.  Overview
+
+The PolyAnalyst tutorials suite is comprised of seven different 
+tutorials covering nearly all of the functionality contained in 
+the PolyAnalyst Power software suite.  Each tutorial is centered 
+around a case study theme, in some cases using real company data.
+
+The tutorials follow through the steps specifying specific details 
+about how to interact with the program interface, how to use the 
+basic functionality of PolyAnalyst, and how PolyAnalyst can be 
+applicable in real world situations.
+
+The three frames of the tutorials section are the header, left panel 
+and the main panel.  The header contains a link to the homepage of 
+the megaputer website at http://www.megaputer.com.  There is also a 
+drop down menu that allows for quick and easy navigation to each 
+tutorial.  The left frame will always provide several links to 
+sections of the tutorials or large steps. The tutorials appear in 
+the main frame.
+
+----------------------------------------------------------------
+
+2. Printing
+Due to the setup of the site, you cannot access any panel 
+of the tutorial individually.  If you click print from your 
+browser menu or toolbar you end up not printing the tutorial but the 
+other panels.  To print the tutorial, the easiest and best manner is 
+to right click inside the tutorials frame and select print from this 
+context menu.  you can also attempt to save the page somewhere.  You 
+cannot open the page in a new window.
+
+----------------------------------------------------------------
+3.  Errors
+
+If you have a browser older than 4.0 or is not IE or NN then you will 
+experience much difficulty using the tutorials.  try copying files 
+in the tutorials directory to another directory.
+Or if you are technically proficient you can edit the script by erasing 
+the javascript reference in each t*.html page.
+
+
+/////////////////////////////////////////////////////////////

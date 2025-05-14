@@ -1,0 +1,113 @@
+/* Pages Dropmenu */
+
+#dropmenu, #dropmenu ul {
+	list-style-type: none;
+	padding: 0px;
+	display: block;
+	height: auto;
+	width: 100%;
+	margin: 0px;
+	float: left;
+}
+#dropmenu li {
+	list-style-type: none;
+	text-align: center;
+	width: auto;
+	display: block;
+	float: left;
+	height: auto;
+	padding: 0px;
+	margin: 0px;
+}
+#dropmenu li li {
+	margin: 0px;
+	padding: 0px;
+	float: left;
+	list-style-type: none;
+	width: 10em;
+	text-align: left;
+	background-image: none;
+}
+#dropmenu li a {
+	list-style-type: none;
+	display: block;
+	text-decoration: none;
+	font-size: 11px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-transform: uppercase;
+	padding-left: 7px;
+	margin-right: 7px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-top: 2px;
+	padding-right: 7px;
+	padding-bottom: 2px;
+	height: auto;
+	width: auto;
+	background-color: #0085C2;
+}
+
+#dropmenu li a:hover {
+	text-decoration: none;
+	background-color: #424242;
+}
+#dropmenu li a span {
+
+
+}
+
+#dropmenu li li a {
+	margin: 0px;
+}
+#dropmenu li li a:hover {
+
+}
+
+#dropmenu span {
+
+}
+
+#dropmenu ul {
+	position:absolute;
+	width: 10em;
+	left: -999em;
+	z-index: 9999;
+	padding: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+#dropmenu ul ul {
+	margin-top: -1.20em;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left: 10em;
+}
+#dropmenu li:hover ul ul, #dropmenu li:hover ul ul ul, #dropmenu li:hover ul ul ul ul {
+	left: -999em;
+}
+#dropmenu li:hover ul, #dropmenu li li:hover ul, #dropmenu li li li:hover ul, #dropmenu li li li li:hover ul {
+	left: auto;
+}
+#dropmenu #home, #dropmenu .current-menu-item {
+	display: block;
+}
+#dropmenu #home a, #dropmenu .current-menu-item a {
+	background-color: #424242;
+	text-decoration: none;
+}
+
+
+#dropmenu .current_page_item {
+	display: block;
+}
+#dropmenu .current_page_item li {
+}
+#dropmenu .current_page_item li a {
+	background-color: #7F8665;
+	border: 1px solid #9EA97A;
+}
+#dropmenu .current_page_item li a:hover {}
