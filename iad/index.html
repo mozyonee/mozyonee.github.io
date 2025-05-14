@@ -44,6 +44,17 @@
 				font-size: 0.9em;
 				margin-left: 10px;
 			}
+			.text-content {
+				padding: 10px;
+				margin: 5px 0 0 20px;
+				background-color: #f9f9f9;
+				border: 1px solid #ddd;
+				border-radius: 5px;
+				white-space: pre-wrap;
+				display: none;
+				font-family: monospace;
+				font-size: 0.9em;
+			}
 		</style>
 	</head>
 	<body>
@@ -92,7 +103,54 @@
 									.pop()
 									.toLowerCase();
 								const fileType = getFileType(fileExt);
-								div.innerHTML = `📄 <a href="iad/${prefix}${item.name}" target="_blank">${item.name}</a> <span class="file-type">(${fileType})</span>`;
+								const fileLink = `iad/${prefix}${item.name}`;
+								if (fileExt === "txt") {
+									// For text files, add click handler to show content
+									div.innerHTML = `📄 <a href="${fileLink}" target="_blank">${item.name}</a> <span class="file-type">(${fileType})</span>`;
+									div.onclick = async () => {
+										let contentDiv = div.nextSibling;
+										if (
+											!contentDiv ||
+											!contentDiv.classList.contains(
+												"text-content"
+											)
+										) {
+											// Create content div if it doesn't exist
+											contentDiv =
+												document.createElement("div");
+											contentDiv.className =
+												"text-content";
+											div.insertAdjacentElement(
+												"afterend",
+												contentDiv
+											);
+											try {
+												const response = await fetch(
+													fileLink
+												);
+												if (!response.ok) {
+													throw new Error(
+														"Failed to fetch file"
+													);
+												}
+												const text =
+													await response.text();
+												contentDiv.textContent = text;
+											} catch (error) {
+												contentDiv.textContent = `Error loading content: ${error.message}`;
+												contentDiv.style.color = "red";
+											}
+										}
+										// Toggle visibility
+										contentDiv.style.display =
+											contentDiv.style.display === "none"
+												? "block"
+												: "none";
+									};
+								} else {
+									// Non-text files use default link behavior
+									div.innerHTML = `📄 <a href="${fileLink}" target="_blank">${item.name}</a> <span class="file-type">(${fileType})</span>`;
+								}
 								container.appendChild(div);
 							}
 						});
