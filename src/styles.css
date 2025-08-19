@@ -1,0 +1,367 @@
+@font-face {
+	font-family: "alt";
+	src: url(../assets/fonts/pixel-font7.regular.ttf);
+}
+
+@font-face {
+	font-family: "light";
+	src: url(../assets/fonts/basis33.ttf);
+}
+@font-face {
+	font-family: "bc";
+	src: url(../assets/fonts/Code-39-Logitogo.ttf);
+}
+
+@-webkit-keyframes caret {
+	0%,
+	49.99% {
+		opacity: 0; /* Fully transparent */
+	}
+	50%,
+	100% {
+		opacity: 1; /* Fully opaque */
+	}
+}
+
+@keyframes caret {
+	0%,
+	49.99% {
+		opacity: 0; /* Fully transparent */
+	}
+	50%,
+	100% {
+		opacity: 1; /* Fully opaque */
+	}
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	--bgc: black;
+	--textc: #d5fff5;
+	--empc: white;
+	--brdc: var(--empc);
+	--linkc: rgb(74, 152, 176);
+	--linkv: rgb(101, 198, 196);
+	--hic: hsl(0deg 0% 100% / 26%);
+}
+
+::-webkit-scrollbar {
+	width: 4px;
+	background-color: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+	color: var(--empc);
+	background-color: var(--empc);
+}
+
+::-moz-selection {
+	background: var(--hic);
+}
+
+::selection {
+	background: var(--hic);
+}
+
+::-moz-selection {
+	background: var(--hic);
+	color: white;
+}
+
+html {
+	scroll-behavior: smooth;
+	-ms-scroll-snap-type: y proximity;
+	scroll-snap-type: y proximity;
+	cursor: url(../assets/images/cursor/static.png) 0 0, auto;
+}
+
+body {
+	font-family: "light";
+	background-color: var(--bgc);
+	background-image: url(../assets/images/background.png);
+	color: var(--textc);
+	scrollbar-width: thin;
+	scrollbar-color: var(--empc) black;
+	background-size: 248px;
+	background-attachment: fixed;
+	font-size: 24px;
+}
+
+a {
+	cursor: url(../assets/images/cursor/hover.png) 0 0, auto;
+	text-decoration: none;
+	color: var(--textc);
+}
+
+.close-header {
+	font-size: 24px;
+	text-decoration: none;
+}
+
+.close-header {
+	cursor: url(../assets/images/cursor/hover.png) 0 0, auto;
+	font-weight: normal;
+	font-size: 48px;
+}
+
+.close-header:hover {
+	text-decoration: underline;
+}
+
+.close-header::after {
+	display: inline-block;
+	content: "";
+	margin-left: 2px;
+	height: 26px;
+	width: 4px;
+	background-color: var(--textc);
+	-webkit-animation: caret 1s steps(1, end) infinite;
+	animation: caret 1s steps(1, end) infinite;
+}
+
+.fade-out {
+	padding: 0 !important;
+	opacity: 0 !important;
+	max-height: 0 !important;
+	overflow: hidden;
+}
+
+header,
+main,
+ul li p {
+	transition: opacity 1s ease-in, height 2s ease-in-out,
+		max-height 2s ease-in-out;
+}
+
+header {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	height: 100vh;
+	max-height: 100vh;
+}
+
+main {
+	text-align: center;
+	padding: 25px;
+	max-height: 15000px;
+	opacity: 1;
+}
+
+.close-main {
+	cursor: url(../assets/images/cursor/hover.png) 0 0, auto;
+	-webkit-filter: brightness(1);
+	filter: brightness(1);
+	transition: -webkit-filter 0.25s ease-in;
+	transition: filter 0.25s ease-in;
+	transition: filter 0.25s ease-in, -webkit-filter 0.25s ease-in;
+}
+
+img.close-main:hover {
+	-webkit-filter: brightness(0.25);
+	filter: brightness(0.25);
+}
+
+h2.close-main:hover {
+	text-decoration: underline;
+}
+
+h2 {
+	margin: 25px 0;
+}
+
+hr {
+	border: none;
+	border-top: 1px solid var(--textc);
+	margin: 20px 0;
+}
+
+.content {
+	-moz-column-gap: 50px;
+	column-gap: 50px;
+	max-width: 960px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-areas: "A A" "B C" "D D";
+	grid-template-columns: 1fr 1fr;
+}
+
+.content div:nth-child(1) {
+	grid-area: A;
+}
+.content div:nth-child(2) {
+	grid-area: B;
+}
+.content div:nth-child(3) {
+	grid-area: C;
+}
+.content div:nth-child(4) {
+	grid-area: D;
+}
+
+.stack ul {
+	display: flex;
+	flex-direction: column !important;
+}
+
+.stack li span:hover {
+	text-decoration: underline;
+}
+
+.experience h3,
+.experience li,
+.education h3,
+.education li {
+	position: relative;
+	text-align: left;
+}
+.experience li,
+.education li {
+	padding-left: 40px;
+}
+.projects h3,
+.projects li,
+.languages h3,
+.languages li {
+	position: relative;
+	text-align: right;
+}
+.projects li,
+.languages li {
+	padding-right: 40px;
+}
+
+.experience li::before,
+.education li::before {
+	content: "-";
+	position: absolute;
+	top: 0;
+	left: 15px;
+}
+.projects li::after,
+.languages li::after {
+	content: "-";
+	position: absolute;
+	top: 0;
+	right: 15px;
+}
+
+.point h3 {
+	cursor: url(../assets/images/cursor/hover.png) 0 0, auto;
+
+	margin-top: 25px;
+	margin-bottom: 10px;
+}
+
+.point {
+	display: grid;
+	grid-template-rows: 0fr 0fr;
+	transition: grid-template-rows 0.5s ease-in-out;
+	transition: grid-template-rows 0.5s ease-in-out,
+		-ms-grid-rows 0.5s ease-in-out;
+	transition: grid-template-rows 0.5s ease-in-out,
+		-ms-grid-rows 0.5s ease-in-out;
+}
+
+.point.active {
+	grid-template-rows: 0fr 1fr;
+}
+
+.point ul {
+	padding: 0;
+	list-style: none;
+	opacity: 0;
+	transition: padding 0.5s ease-in-out, opacity 0.25s ease-in-out;
+
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	border: 1px solid var(--textc);
+	outline: 1px solid var(--textc);
+	outline-offset: -5px;
+	overflow: hidden;
+}
+
+.point.active ul {
+	padding: 25px 5px;
+	opacity: 1;
+	transition: padding 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.row ul,
+.row li {
+	max-height: -webkit-min-content;
+	max-height: -moz-min-content;
+	max-height: min-content;
+}
+
+.row ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+h4 span {
+	display: block;
+}
+
+.projects a:nth-child(1) {
+	position: relative;
+	top: 2px;
+}
+
+h4 img:hover {
+	-webkit-filter: brightness(0.8);
+	filter: brightness(0.8);
+}
+
+.point.active h3::before,
+.point:hover h3::before {
+	content: "/";
+}
+
+@media (hover: none) {
+	.point h3::before {
+		content: "";
+	}
+}
+
+@media screen and (max-width: 800px) {
+	/* body {
+		padding: 25px;
+	} */
+	.point ul {
+		gap: 15px;
+		font-size: 24px;
+	}
+	.point p {
+		font-size: 18px;
+	}
+	.point h3,
+	.point li {
+		text-align: center !important;
+	}
+	.point li {
+		padding: 0;
+	}
+	.point li::after,
+	.point li::before {
+		content: "";
+	}
+	.content {
+		grid-template-areas: "A" "B" "C" "D";
+		grid-template-columns: 1fr;
+	}
+	.row ul {
+		flex-direction: column;
+	}
+}
