@@ -76,6 +76,7 @@ html {
 	scroll-behavior: smooth;
 	-ms-scroll-snap-type: y proximity;
 	scroll-snap-type: y proximity;
+	overscroll-behavior: none;
 	cursor: url(../assets/images/cursor/static.png) 0 0, auto;
 }
 
