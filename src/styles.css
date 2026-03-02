@@ -78,6 +78,11 @@ html {
 	scroll-snap-type: y proximity;
 	overscroll-behavior: none;
 	cursor: url(../assets/images/cursor/static.png) 0 0, auto;
+	overflow: hidden;
+}
+
+html.scrollable {
+	overflow: auto;
 }
 
 body {
@@ -135,7 +140,7 @@ header,
 main,
 ul li p {
 	transition: opacity 1s ease-in, height 2s ease-in-out,
-		max-height 2s ease-in-out;
+		max-height 2s ease-in-out, padding 2s ease-in-out;
 }
 
 header {

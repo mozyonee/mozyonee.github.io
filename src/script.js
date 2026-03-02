@@ -74,6 +74,7 @@ headerBlock.addEventListener('click', () => {
 closeMainElements.forEach(element => {
 	element.addEventListener('click', () => {
 		if (pageOpen) {
+			document.documentElement.classList.remove('scrollable');
 			headerBlock.classList.remove('fade-out');
 			mainBlock.classList.add('fade-out');
 			audioMusic.loop = true;
@@ -81,6 +82,10 @@ closeMainElements.forEach(element => {
 			pageOpen = false;
 		}
 	});
+});
+
+mainBlock.addEventListener('transitionend', (e) => {
+	if (e.propertyName === 'max-height' && pageOpen) document.documentElement.classList.add('scrollable');
 });
 
 headings.forEach(heading => {
