@@ -6,6 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="src/styles.css" />
 	<link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+	<link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+	<script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
 	<title>MCRN</title>
 </head>
 
@@ -189,6 +191,21 @@
 						<li>
 							<a href="https://github.com/mozyonee" target="_blank">github</a>
 						</li>
+						<li class="appointment">
+							<script>
+								(function() {
+								var target = document.currentScript;
+								window.addEventListener('load', function() {
+									calendar.schedulingButton.load({
+										url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0cBwD5uQHycKPd1jE_vilFvFmzM9hBfRo9QvvJ-qI7MeTfuPSIjP_zn4nDXf2HXulIePYMGS70?gv=true',
+										color: '#000000',
+										label: 'book an appointment',
+										target,
+									});
+								});
+								})();
+							</script>
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -197,6 +214,7 @@
 			<a href="assets/resume.pdf" target="_blank" download>... or download my cv</a>
 		</h2>
 	</main>
+
 	<script type="text/javascript" src="src/script.js"></script>
 </body>
 

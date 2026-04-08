@@ -335,6 +335,18 @@ h4 img:hover {
 	content: "/";
 }
 
+.appointment button {
+  background: transparent !important;
+  color: var(--textc) !important;
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0;
+}
+
+.appointment button:hover {
+  text-decoration: underline;
+}
+
 @media (hover: none) {
 	.point h3::before {
 		content: "";
@@ -369,5 +381,16 @@ h4 img:hover {
 	}
 	.row ul {
 		flex-direction: column;
+	}
+}
+
+@media screen and (min-width: 801px) {
+	.contacts ul {
+		flex-wrap: wrap;
+	}
+
+	.appointment {
+		flex-basis: 100%;
+		text-align: center;
 	}
 }
