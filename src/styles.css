@@ -335,16 +335,8 @@ h4 img:hover {
 	content: "/";
 }
 
-.appointment button {
-  background: transparent !important;
-  color: var(--textc) !important;
-  font-size: inherit;
-  font-family: inherit;
-  padding: 0;
-}
-
-.appointment button:hover {
-  text-decoration: underline;
+.appointment {
+	font-weight: 700;
 }
 
 @media (hover: none) {
